@@ -1,0 +1,10 @@
+<resources>　
+    <string-array name="align">
+        　　
+        <item>居左</item>
+        　　
+        <item>居中</item>
+        　　
+        <item>居右</item>
+    </string-array>
+</resources>
