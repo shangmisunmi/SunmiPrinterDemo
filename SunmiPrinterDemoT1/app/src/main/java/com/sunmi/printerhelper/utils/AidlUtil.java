@@ -176,6 +176,7 @@ public class AidlUtil {
 
 
         try {
+			woyouService.setAlignment(1, null);
             woyouService.printQRCode(data, modulesize, errorlevel, null);
             woyouService.lineWrap(3, null);
         } catch (RemoteException e) {

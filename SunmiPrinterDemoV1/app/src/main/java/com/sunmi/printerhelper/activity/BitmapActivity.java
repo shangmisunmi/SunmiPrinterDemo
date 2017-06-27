@@ -2,6 +2,7 @@ package com.sunmi.printerhelper.activity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -38,11 +39,12 @@ public class BitmapActivity extends BaseActivity {
 
     private void initView() {
         if (bitmap == null) {
-            bitmap = BitmapFactory.decodeResource(getResources(), R.raw.test);
+            bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.test);
         }
 
         if (bitmap1 == null) {
-            bitmap1 = BitmapFactory.decodeResource(getResources(), R.raw.test1);
+            bitmap1 = BitmapFactory.decodeResource(getResources(), R.mipmap.test1);
+            bitmap1 = scaleImage(bitmap1);
         }
         if (baseApp.isAidl()) {
             mImageView.setImageDrawable(new BitmapDrawable(bitmap));
@@ -50,6 +52,22 @@ public class BitmapActivity extends BaseActivity {
             mImageView.setImageDrawable(new BitmapDrawable(bitmap1));
         }
 
+    }
+
+    private Bitmap scaleImage(Bitmap bitmap1) {
+        int width = bitmap1.getWidth();
+        int height = bitmap1.getHeight();
+        // 设置想要的大小
+        int newWidth = (width/8+1)*8;
+        // 计算缩放比例
+        float scaleWidth = ((float) newWidth) / width;
+        // 取得想要缩放的matrix参数
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, 1);
+        // 得到新的图片
+        Bitmap newbm = Bitmap.createBitmap(bitmap1, 0, 0, width, height, matrix,
+                true);
+        return newbm;
     }
 
     public void onClick(View view) {

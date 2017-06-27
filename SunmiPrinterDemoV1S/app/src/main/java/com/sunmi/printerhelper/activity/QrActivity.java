@@ -64,6 +64,7 @@ public class QrActivity extends BaseActivity {
                         mDialog.cancel();
                     }
                 }, null);
+                mDialog.setHintText("www.sunmi.com");
                 mDialog.show();
             }
         });

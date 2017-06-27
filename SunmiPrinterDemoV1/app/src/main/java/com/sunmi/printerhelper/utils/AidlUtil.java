@@ -91,7 +91,7 @@ public class AidlUtil {
 
             @Override
             public void onReturnString(String result) throws RemoteException {
-
+                printerCallback.onReturnString(result);
             }
 
             @Override
@@ -188,6 +188,7 @@ public class AidlUtil {
 
 
         try {
+		    woyouService.setAlignment(1, null);
             woyouService.printQRCode(data, modulesize, errorlevel, null);
             woyouService.lineWrap(3, null);
         } catch (RemoteException e) {
