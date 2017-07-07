@@ -19,7 +19,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
     defaultConfig {
-        applicationId "com.test.printertestdemo"
+        applicationId "com.test.printertestdemov1"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 6
