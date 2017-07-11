@@ -1,5 +1,5 @@
 /**
-* JIUI V1 打印服务
+* JIUI T1 打印服务
 * AIDL Version: 1.1
 */
 
@@ -214,4 +214,20 @@ interface IWoyouService
 	void exitPrinterBuffer(in boolean commit);
 	
 	void tax(in byte [] data,in ITax callback);
+	
+	//获取当前打印机模式：0 普通模式 1黑标模式
+	int getPrinterMode();
+	
+	//获取黑标模式打印机自动走纸距离
+	int getPrinterBBMDistance();
+	
+	/**
+	* 打印表格的一行，可以指定列宽、对齐方式
+	* @param colsTextArr   各列文本字符串数组
+	* @param colsWidthArr  各列宽度权重即各列所占比例
+	* @param colsAlign	        各列对齐方式(0居左, 1居中, 2居右)
+	* 备注: 三个参数的数组长度应该一致, 如果colsText[i]的宽度大于colsWidth[i], 则文本换行
+	*/
+	void printColumnsString(in String[] colsTextArr, in int[] colsWidthArr, in int[] colsAlign, in ICallback callback);
+	
 }
