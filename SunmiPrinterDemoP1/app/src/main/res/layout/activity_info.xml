@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="打印机序列号"
+            android:text="@string/printer_serial_num"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -26,7 +26,7 @@
             android:id="@+id/info1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
+            android:gravity="end|center_vertical"
             android:text=""
             android:textColor="@color/gray"
             android:textSize="14sp"/>
@@ -40,7 +40,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="打印机型号"
+            android:text="@string/printer_model"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -48,7 +48,7 @@
             android:id="@+id/info2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
+            android:gravity="end|center_vertical"
             android:text=""
             android:textColor="@color/gray"
             android:textSize="14sp"/>
@@ -63,7 +63,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="打印头的型号"
+            android:text="@string/printer_head"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -71,7 +71,7 @@
             android:id="@+id/info7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
+            android:gravity="end|center_vertical"
             android:text=""
             android:textColor="@color/gray"
             android:textSize="14sp"/>
@@ -86,7 +86,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="打印机固件版本号"
+            android:text="@string/printer_firmware"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -94,7 +94,7 @@
             android:id="@+id/info3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
+            android:gravity="end|center_vertical"
             android:text=""
             android:textColor="@color/gray"
             android:textSize="14sp"/>
@@ -108,7 +108,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="打印机头尺寸"
+            android:text="@string/printer_head_size"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -116,7 +116,7 @@
             android:id="@+id/info4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
+            android:gravity="end|center_vertical"
             android:text="58mm"
             android:textColor="@color/gray"
             android:textSize="14sp"/>
@@ -130,7 +130,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="打印距离"
+            android:text="@string/printer_distance"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -138,7 +138,7 @@
             android:id="@+id/info5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
+            android:gravity="end|center_vertical"
             android:text=""
             android:textColor="@color/gray"
             android:textSize="14sp"/>
@@ -152,7 +152,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="打印服务版本"
+            android:text="@string/printer_version"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -160,7 +160,7 @@
             android:id="@+id/info6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
+            android:gravity="end|center_vertical"
             android:text=""
             android:textColor="@color/gray"
             android:textSize="14sp"/>
@@ -174,7 +174,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="打印服务开发版本"
+            android:text="@string/printer_dev_version"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -182,7 +182,7 @@
             android:id="@+id/info8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
+            android:gravity="end|center_vertical"
             android:text=""
             android:textColor="@color/gray"
             android:textSize="14sp"/>

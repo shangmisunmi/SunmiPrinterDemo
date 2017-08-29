@@ -19,15 +19,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="文字字体"
+            android:text="@string/type_text"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
-            android:text="等宽"
+            android:gravity="end|center_vertical"
+            android:text="Type monospace"
             android:textColor="@color/gray"
             android:textSize="14sp"/>
     </LinearLayout>
@@ -42,7 +42,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="字符集"
+            android:text="@string/characterset"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="字体大小"
+            android:text="@string/size_text"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -92,7 +92,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="加粗"
+            android:text="@string/bold_text"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -104,7 +104,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="下划线"
+            android:text="@string/underline_text"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -146,7 +146,7 @@
             android:background="@color/text"
             android:gravity="center"
             android:onClick="onClick"
-            android:text="打印"
+            android:text="@string/print"
             android:textColor="@color/white"
             android:textSize="18sp"/>
     </LinearLayout>

@@ -202,7 +202,7 @@ public class FunctionActivity extends AppCompatActivity {
 
     private void showAbout() {
         CharSequence charSequenc = getResources().getText(R.string.about_content);
-        TextHintDialog textHintDialog = DialogCreater.createTextHintDialog(this, "关于", "上传打印信息", "GitHub", charSequenc.toString(), null,null, false);
+        TextHintDialog textHintDialog = DialogCreater.createTextHintDialog(this, getResources().getString(R.string.about), getResources().getString(R.string.upload_info), "GitHub", charSequenc.toString(), null,null, false);
         textHintDialog.setCanceledOnTouchOutside(true);
         textHintDialog.show();
     }

@@ -52,7 +52,7 @@ public class QrActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-                mDialog = DialogCreater.createEditTextDialog(QrActivity.this, "取消", "确定", "请输入二维码内容", new View.OnClickListener() {
+                mDialog = DialogCreater.createEditTextDialog(QrActivity.this, getResources().getString(R.string.cancel), getResources().getString(R.string.confirm), getResources().getString(R.string.input_qrcode), new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         mDialog.cancel();
@@ -72,13 +72,13 @@ public class QrActivity extends BaseActivity {
         findViewById(R.id.qr_num).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String[] mStrings = new String[]{"单个", "双个"};
-                final ListDialog listDialog = DialogCreater.createListDialog(QrActivity.this, "二维码排列方式", "取消", mStrings);
+                final String[] mStrings = new String[]{getResources().getString(R.string.single), getResources().getString(R.string.twice)};
+                final ListDialog listDialog = DialogCreater.createListDialog(QrActivity.this, getResources().getString(R.string.array_qrcode), getResources().getString(R.string.cancel), mStrings);
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {
                         if (baseApp.isAidl()) {
-                            Toast.makeText(QrActivity.this, "AIDL 暂时只打印单个二维码", Toast.LENGTH_LONG).show();
+                            Toast.makeText(QrActivity.this, R.string.toast_7, Toast.LENGTH_LONG).show();
                             position = 0;
                         } else {
                             mTextView3.setText("7");
@@ -96,13 +96,13 @@ public class QrActivity extends BaseActivity {
         findViewById(R.id.qr_size).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final ListDialog listDialog = DialogCreater.createListDialog(QrActivity.this, "二维码块大小", "取消", new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"});
+                final ListDialog listDialog = DialogCreater.createListDialog(QrActivity.this, getResources().getString(R.string.size_qrcode), getResources().getString(R.string.cancel), new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"});
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {
                         position += 1;
                         if (print_num == 1 && Integer.parseInt(mTextView3.getText().toString()) > 7) {
-                            Toast.makeText(QrActivity.this, "两个二维码尺寸最大为7", Toast.LENGTH_LONG).show();
+                            Toast.makeText(QrActivity.this, R.string.toast_8, Toast.LENGTH_LONG).show();
                             position = 7;
                         }
                         mTextView3.setText("" + position);
@@ -118,7 +118,7 @@ public class QrActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 final String[] el = new String[]{"纠错级别L (7%)", "纠错级别M (15%)", "纠错级别Q (25%)", "纠错级别H (30%)"};
-                final ListDialog listDialog = DialogCreater.createListDialog(QrActivity.this, "二维码纠错等级", "取消", el);
+                final ListDialog listDialog = DialogCreater.createListDialog(QrActivity.this, getResources().getString(R.string.error_qrcode), getResources().getString(R.string.cancel), el);
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {

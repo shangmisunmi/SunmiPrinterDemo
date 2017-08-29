@@ -58,7 +58,7 @@ public class TextActivity extends BaseActivity implements CompoundButton.OnCheck
         findViewById(R.id.text_character).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final ListDialog listDialog = DialogCreater.createListDialog(TextActivity.this, "字符集", "取消", mStrings);
+                final ListDialog listDialog = DialogCreater.createListDialog(TextActivity.this, getResources().getString(R.string.characterset), getResources().getString(R.string.cancel), mStrings);
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {
@@ -74,7 +74,7 @@ public class TextActivity extends BaseActivity implements CompoundButton.OnCheck
         findViewById(R.id.text_size).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showSeekBarDialog(TextActivity.this, "字体大小", 12, 36, mTextView2);
+                showSeekBarDialog(TextActivity.this, getResources().getString(R.string.size_text), 12, 36, mTextView2);
             }
         });
         AidlUtil.getInstance().initPrinter();

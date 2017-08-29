@@ -13,7 +13,7 @@
         android:layout_height="36dp"
         android:background="@color/line"
         android:gravity="center_vertical"
-        android:text="行"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="18sp"/>
 

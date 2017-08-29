@@ -20,7 +20,6 @@ import com.sunmi.printerhelper.utils.BluetoothUtil;
 import com.sunmi.printerhelper.utils.BytesUtil;
 import com.sunmi.printerhelper.utils.ESCUtil;
 
-import java.io.IOException;
 import java.util.LinkedList;
 
 import sunmi.sunmiui.button.ButtonRectangular;
@@ -58,7 +57,7 @@ public class TableActivity extends BaseActivity {
 
     private void initListView() {
         footView = new ButtonRectangular(this);
-        footView.setTitleText("新增一行");
+        footView.setTitleText(getResources().getString(R.string.add_line));
         footView.setTextColorEnabled(R.color.black);
         footView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,11 +121,10 @@ public class TableActivity extends BaseActivity {
                     (ti.getWidth())[num] = Integer.parseInt(((EditText) v).getText().toString());
                     break;
             }
-            v = null;
         }
 
 
-        public void setCallback() {
+        private void setCallback() {
             if (mText1 == null || mText2 == null || mText3 == null
                     || width1 == null || width2 == null || width3 == null
                     || align1 == null || align2 == null || align3 == null) {
@@ -186,7 +184,7 @@ public class TableActivity extends BaseActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder v = null;
+            ViewHolder v;
             if (convertView == null) {
                 convertView = LayoutInflater.from(TableActivity.this).inflate(R.layout.item_table, null);
                 v = new ViewHolder();
@@ -207,7 +205,7 @@ public class TableActivity extends BaseActivity {
             }
 
             v.line = position;
-            v.mText.setText("第" + (++position) + "行");
+            v.mText.setText("Row."+(++position));
             if (v.view != null) {
                 v.view.requestFocus();
             }

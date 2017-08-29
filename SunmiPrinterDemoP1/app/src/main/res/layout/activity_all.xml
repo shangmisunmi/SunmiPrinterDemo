@@ -6,17 +6,19 @@
               android:orientation="vertical"
               android:paddingLeft="16dp"
               android:paddingRight="16dp">
+
     <TextView
         android:id="@+id/multi_buffer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@color/text"
         android:gravity="center"
-        android:layout_marginTop="20dp"
         android:padding="10dp"
-        android:text="进入事务打印"
+        android:text="@string/enter_work"
         android:textColor="@color/white"
         android:textSize="18sp"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,7 +37,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印百度小票"
+                android:text="@string/print_baidu_ticket"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -47,7 +49,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印美团小票"
+                android:text="@string/print_meituan_ticket"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -59,7 +61,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印饿了么小票"
+                android:text="@string/print_eleme_ticket"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -71,7 +73,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印口碑小票"
+                android:text="@string/print_koubei_ticket"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -83,7 +85,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印间断黑块"
+                android:text="@string/print_interval_black"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -95,7 +97,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印大黑块"
+                android:text="@string/print_black"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
