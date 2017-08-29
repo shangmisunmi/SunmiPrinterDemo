@@ -55,7 +55,7 @@ public class BarCodeActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-                mDialog = DialogCreater.createEditTextDialog(BarCodeActivity.this, "取消", "确定", "请输入条形码内容", new View.OnClickListener() {
+                mDialog = DialogCreater.createEditTextDialog(BarCodeActivity.this, getResources().getString(R.string.cancel), getResources().getString(R.string.confirm), getResources().getString(R.string.input_barcode), new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         mDialog.cancel();
@@ -75,7 +75,7 @@ public class BarCodeActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 final String[] list = new String[]{"UPC-A", "UPC-E", "EAN13", "EAN8", "CODE39", "ITF", "CODABAR", "CODE93", "CODE128"};
-                final ListDialog listDialog = DialogCreater.createListDialog(BarCodeActivity.this, "条形码编码", "取消", list);
+                final ListDialog listDialog = DialogCreater.createListDialog(BarCodeActivity.this, getResources().getString(R.string.encode_barcode), getResources().getString(R.string.cancel), list);
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {
@@ -92,8 +92,8 @@ public class BarCodeActivity extends BaseActivity {
         findViewById(R.id.bc_position).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String[] list = new String[]{"不打印文字", "条形码上方", "条形码下方", "条形码上下方"};
-                final ListDialog listDialog = DialogCreater.createListDialog(BarCodeActivity.this, "文字位置", "取消", list);
+                final String[] list = new String[]{getResources().getString(R.string.no_print), getResources().getString(R.string.barcode_up), getResources().getString(R.string.barcode_down), getResources().getString(R.string.barcode_updown)};
+                final ListDialog listDialog = DialogCreater.createListDialog(BarCodeActivity.this, getResources().getString(R.string.text_position), getResources().getString(R.string.cancel), list);
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {
@@ -109,14 +109,14 @@ public class BarCodeActivity extends BaseActivity {
         findViewById(R.id.bc_height).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showSeekBarDialog(BarCodeActivity.this, "条形码高度", 1, 255, mTextView5);
+                showSeekBarDialog(BarCodeActivity.this, getResources().getString(R.string.barcode_height), 1, 255, mTextView5);
             }
         });
 
         findViewById(R.id.bc_width).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showSeekBarDialog(BarCodeActivity.this, "条形码宽度", 2, 6, mTextView4);
+                showSeekBarDialog(BarCodeActivity.this, getResources().getString(R.string.barcode_width), 2, 6, mTextView4);
             }
         });
 

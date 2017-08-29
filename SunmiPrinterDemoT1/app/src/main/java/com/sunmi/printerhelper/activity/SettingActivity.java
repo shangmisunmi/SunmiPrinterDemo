@@ -20,7 +20,7 @@ import sunmi.sunmiui.dialog.ListDialog;
  */
 
 public class SettingActivity extends BaseActivity implements View.OnClickListener{
-    String[] method = new String[]{"AIDL", "蓝牙"};
+    String[] method = new String[]{"AIDL", "BlueTooth"};
     String[] size = new String[]{"80mm", "58mm"};
     String[] concentration = new String[]{"130%", "125%","120%","115%","110%","105%","100%","95%","90%","85%","80%","75%","70%"};
 
@@ -58,7 +58,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
         if(baseApp.isAidl())
             ((TextView)findViewById(R.id.setting_textview1)).setText("AIDL");
         else
-            ((TextView)findViewById(R.id.setting_textview1)).setText("蓝牙");
+            ((TextView)findViewById(R.id.setting_textview1)).setText("BlueTooth");
         setService();
     }
 
@@ -81,7 +81,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
         final ListDialog listDialog;
         switch (v.getId()){
             case R.id.setting_connect:
-                listDialog = DialogCreater.createListDialog(this, "连接方式", "取消", method);
+                listDialog = DialogCreater.createListDialog(this, getResources().getString(R.string.connect_method), getResources().getString(R.string.cancel), method);
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {
@@ -103,7 +103,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                 listDialog.show();
                 break;
             case R.id.setting_size:
-                listDialog = DialogCreater.createListDialog(this, "纸张尺寸", "取消", size);
+                listDialog = DialogCreater.createListDialog(this, getResources().getString(R.string.size_paper), getResources().getString(R.string.cancel), size);
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {
@@ -114,7 +114,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                 listDialog.show();
                 break;
             case R.id.setting_concentration:
-                listDialog = DialogCreater.createListDialog(this, "纸张浓度", "取消", concentration);
+                listDialog = DialogCreater.createListDialog(this, getResources().getString(R.string.print_density), getResources().getString(R.string.cancel), concentration);
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {

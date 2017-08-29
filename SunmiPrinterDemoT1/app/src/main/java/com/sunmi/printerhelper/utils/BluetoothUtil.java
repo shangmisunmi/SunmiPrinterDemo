@@ -8,6 +8,8 @@ import android.text.LoginFilter;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.sunmi.printerhelper.R;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Set;
@@ -53,23 +55,23 @@ public class BluetoothUtil {
     public static boolean connectBlueTooth(Context context) {
         if (bluetoothSocket == null) {
             if (getBTAdapter() == null) {
-                Toast.makeText(context, "蓝牙设备不可用", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, R.string.toast_3, Toast.LENGTH_SHORT).show();
                 return false;
             }
             if (!getBTAdapter().isEnabled()) {
-                Toast.makeText(context, "未检测到蓝牙设备，请打开蓝牙", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, R.string.toast_4, Toast.LENGTH_SHORT).show();
                 return false;
             }
             BluetoothDevice device;
             if ((device = getDevice(getBTAdapter())) == null) {
-                Toast.makeText(context, "未发现InnterPrinter!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, R.string.toast_5, Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             try {
                 bluetoothSocket = getSocket(device);
             } catch (IOException e) {
-                Toast.makeText(context, "蓝牙连接失败!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, R.string.toast_6, Toast.LENGTH_SHORT).show();
                 return false;
             }
         }

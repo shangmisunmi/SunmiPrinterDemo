@@ -12,7 +12,9 @@
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:showDividers="middle|end|beginning">
+        android:showDividers="middle|end|beginning"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:id="@+id/setting_connect"
@@ -25,7 +27,7 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="连接方式"
+                android:text="@string/connect_method"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -51,7 +53,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="纸张尺寸"
+                android:text="@string/size_paper"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -76,7 +78,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="纸张浓度"
+                android:text="@string/print_density"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -102,7 +104,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="打印机信息"
+                android:text="@string/info_title"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -131,7 +133,7 @@
             android:layout_weight="1"
             android:background="@color/text"
             android:gravity="center"
-            android:text="连接服务"
+            android:text="@string/connect_service"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -142,7 +144,7 @@
             android:layout_weight="1"
             android:background="@color/text"
             android:gravity="center"
-            android:text="断开服务"
+            android:text="@string/disconnect_service"
             android:textColor="@color/white1"
             android:textSize="18sp"/>
     </LinearLayout>

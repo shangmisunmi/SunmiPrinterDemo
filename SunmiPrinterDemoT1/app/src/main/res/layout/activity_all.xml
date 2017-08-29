@@ -25,7 +25,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印百度小票"
+                android:text="@string/print_baidu_ticket"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -37,7 +37,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印美团小票"
+                android:text="@string/print_meituan_ticket"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -49,7 +49,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印饿了么小票"
+                android:text="@string/print_eleme_ticket"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -61,7 +61,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印口碑小票"
+                android:text="@string/print_koubei_ticket"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -73,7 +73,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印间断黑块"
+                android:text="@string/print_interval_black"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -85,7 +85,7 @@
                 android:background="@color/gray"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="打印大黑块"
+                android:text="@string/print_black"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 

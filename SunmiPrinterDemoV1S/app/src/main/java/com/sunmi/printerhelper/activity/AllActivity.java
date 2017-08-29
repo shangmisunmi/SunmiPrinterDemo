@@ -44,17 +44,17 @@ public class AllActivity extends BaseActivity implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 if(!baseApp.isAidl()){
-                    Toast.makeText(AllActivity.this, "事务打印请使用Aidl模式！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AllActivity.this, R.string.toast_1, Toast.LENGTH_LONG).show();
                     return;
                 }else{
                     if(mark){
                         mark = false;
                         v.setBackgroundColor(getResources().getColor(R.color.text));
-                        ((TextView)v).setText("进入事务打印");
+                        ((TextView)v).setText(R.string.enter_work);
                     }else{
                         mark = true;
                         v.setBackgroundColor(getResources().getColor(R.color.gray));
-                        ((TextView)v).setText("退出事务打印");
+                        ((TextView)v).setText(R.string.exit_work);
                     }
 
                 }
@@ -120,8 +120,8 @@ public class AllActivity extends BaseActivity implements View.OnClickListener {
     };
 
     private void sendDataThread(byte[] send){
-        mDialog = DialogCreater.createLoadingDialog(this, "打印中~~~");
-        //mDialog.show();
+        mDialog = DialogCreater.createLoadingDialog(this, getResources().getString(R.string.printing));
+        mDialog.show();
         temp = send;
         AidlUtil.getInstance().sendRawDatabyBuffer(temp, mICallback);
     }

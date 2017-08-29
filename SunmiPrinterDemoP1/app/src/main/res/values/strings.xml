@@ -65,9 +65,9 @@
     <string name="underline_text">underline</string>
     <string name="print_density">printer density</string>
     <string name="add_line">add</string>
-    <string name="content_form">form content</string>
+    <string name="content_form">content</string>
     <string name="weight_form">weight%</string>
-    <string name="align_form">select justification</string>
+    <string name="align_form">align</string>
     <string name="align_left">left</string>
     <string name="align_mid">middle</string>
     <string name="align_right">right</string>
@@ -78,6 +78,7 @@
     <string name="twice">double</string>
     <string name="connect_service">Connect</string>
     <string name="disconnect_service">Disconnect</string>
+    <string name="input_order">input epson command:</string>
 
     <!--instruction-->
     <string name="toast_1">Transaction print,use the AIDL mode!</string>
@@ -90,15 +91,13 @@
     <string name="toast_8">Now QrCode size must be less than 7!</string>
 
     <!--about content-->
-    <string name="about_content">PrinterHelper适用于sunmi系列\nPrinterHelper集成了AIDL和BLUETOOTH两种连接方式，并且提供一系列的打印测试模块，帮助开发者更快的接入sunmi打印功能。\n上传打印信息可以帮助sunmi更好的定位出现的问题。\n官网:http://www.sunmi.com\n开发者文档: http://feedback.sunmi.com
-    </string>
+    <string name="about_content">PrinterHelper is suitable for the sunmi series. \nPrinterHelper integrate two connection type: AIDL and BLUETOOTH. It also provide a series of printing testing module, which help the developer to connect with the sunmi printing function faster. \n upload the information that need to be printed, which allows sunmi to better locate the issues. \n official site: http://www.sunmi.com. \n developer documentation: http://docs.sunmi.com</string>
+
 
     <!--function explain-->
-    <string name="text_instruction">说明：Sunmi打印字体是等宽字体，除支持常用Epson指令集设置字体结构外，还可以使用AIDL接口调用直接设置字体大小尺寸，测试demo仅使用后者设置字体大小，开发者有意可自己查阅相关Epson指令设置字体变化。\n注意：字符集的设置只影响指令打印不会影响AIDL打印文字，打印单字节字符集需要先设置单字节模式，Sunmi服务默认双字节模式！</string>
-
+    <string name="text_instruction"> specification: The typeface of sunmi is monospaced font. Expect for supporting the font structure set by normal instruction set, it can also use AIDL interface interchange to directly set the font size. However, the testing demo only could use AIDL interface interchange to do it. Developers could look up relative Epson instruction set, then set the font by themselves. \n notice: the setting of the character set only has influence on the order printing, not affecting AIDL printing characters. Printing Single-Byte Character set should set the Single-Byte mode at first. Howerver, the default of sunmi services is double byte mode.  </string>
     <!--print content-->
-    <string name="text_print">欢迎光临(简体中文)\n歡迎光臨(繁体中文)\nWelcome(英文)\n어서 오세요.(韩文)\nいらっしゃいませ(日文)\nWillkommen in der(德文)\nSouhaits de bienvenue(法文)\nยินดีต้อนรับสู่(泰文)\nДобро пожаловать(俄文)\nBenvenuti a(意大利语)\nvítejte v(捷克文)\nBEM - vindo Ao(葡萄牙文)\nمرحبا بكم في(阿拉伯语)\n</string>
-
+    <string name="text_print">欢迎光临(Simplified Chinese)\n歡迎光臨（traditional chinese）\nWelcome(English)\n어서 오세요.(Korean)\nいらっしゃいませ(Japanese)\nWillkommen in der(Germany)\nSouhaits de bienvenue(France)\nยินดีต้อนรับสู่(Thai)\nДобро пожаловать(Russian)\nBenvenuti a(Italian)\nvítejte v(Czech)\nBEM - vindo Ao(Portutuese)\nمرحبا بكم في(Arabic)\n</string>
     <!--table explain-->
-    <string name="table_instruction">说明：蓝牙打印表格只提供例子及打印效果测试，具体方法可参考epson指令集。</string>
+    <string name="table_instruction">specifications: Bluetooth printing table could only provide examples and printing test. Specific methods could refer to Epson instruction set.  </string>
 </resources>

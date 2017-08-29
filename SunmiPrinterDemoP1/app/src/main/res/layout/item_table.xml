@@ -7,16 +7,6 @@
               android:descendantFocusability="afterDescendants"
               android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/it_title"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:background="@color/line"
-        android:gravity="center_vertical"
-        android:text=""
-        android:textColor="@color/white"
-        android:textSize="18sp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +26,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="表格内容"
+                android:text="@string/content_form"
+                android:ems="4"
+                android:gravity="center"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -91,7 +83,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="内容权重"
+                android:ems="4"
+                android:text="@string/weight_form"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -148,7 +141,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="对齐方式"
+                android:text="@string/align_form"
+                android:ems="4"
+                android:gravity="center"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -183,4 +178,15 @@
                 app:theme="@style/myDropTheme"/>
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/it_title"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/line"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
 </LinearLayout>

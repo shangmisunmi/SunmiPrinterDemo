@@ -73,7 +73,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         switch (item.getItemId()){
             case R.id.action_print:
                 //Toast.makeText(this, "将实现十六进制指令发送", Toast.LENGTH_SHORT).show();
-                mEditTextDialog = DialogCreater.createEditTextDialog(this, "取消", "确定", "请输入指令：", new View.OnClickListener() {
+                mEditTextDialog = DialogCreater.createEditTextDialog(this, getResources().getString(R.string.cancel), getResources().getString(R.string.confirm), getResources().getString(R.string.input_order), new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         mEditTextDialog.cancel();

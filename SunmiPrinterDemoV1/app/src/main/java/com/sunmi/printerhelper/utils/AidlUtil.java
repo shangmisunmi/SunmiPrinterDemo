@@ -12,6 +12,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.sunmi.printerhelper.R;
 import com.sunmi.printerhelper.bean.TableItem;
 
 import java.util.ArrayList;
@@ -109,7 +110,7 @@ public class AidlUtil {
 
     public void setDarkness(int index) {
         if (woyouService == null) {
-            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context, R.string.toast_2,Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -129,7 +130,7 @@ public class AidlUtil {
      */
     public List<String> getPrinterInfo(PrinterCallback printerCallback) {
         if (woyouService == null) {
-            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,R.string.toast_2,Toast.LENGTH_LONG).show();
             return null;
         }
 
@@ -166,7 +167,7 @@ public class AidlUtil {
      */
     public void initPrinter() {
         if (woyouService == null) {
-            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,R.string.toast_2,Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -182,7 +183,7 @@ public class AidlUtil {
      */
     public void printQr(String data, int modulesize, int errorlevel) {
         if (woyouService == null) {
-            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context, R.string.toast_2,Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -201,7 +202,7 @@ public class AidlUtil {
      */
     public void printBarCode(String data, int symbology, int height, int width, int textposition) {
         if (woyouService == null) {
-            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,R.string.toast_2,Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -219,7 +220,7 @@ public class AidlUtil {
      */
     public void printText(String content, float size, boolean isBold, boolean isUnderLine) {
         if (woyouService == null) {
-            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,R.string.toast_2,Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -249,7 +250,7 @@ public class AidlUtil {
      */
     public void printBitmap(Bitmap bitmap) {
         if (woyouService == null) {
-            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,R.string.toast_2,Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -267,7 +268,7 @@ public class AidlUtil {
      */
     public void printTable(LinkedList<TableItem> list) {
         if (woyouService == null) {
-            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,R.string.toast_2,Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -287,7 +288,7 @@ public class AidlUtil {
      */
     public void print3Line(){
         if (woyouService == null) {
-            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,R.string.toast_2,Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -301,7 +302,7 @@ public class AidlUtil {
 
     public void sendRawData(byte[] data) {
         if (woyouService == null) {
-            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,R.string.toast_2,Toast.LENGTH_LONG).show();
             return;
         }
 

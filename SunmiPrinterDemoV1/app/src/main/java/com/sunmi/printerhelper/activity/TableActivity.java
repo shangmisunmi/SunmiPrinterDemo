@@ -58,7 +58,7 @@ public class TableActivity extends BaseActivity {
 
     private void initListView() {
         footView = new ButtonRectangular(this);
-        footView.setTitleText("新增一行");
+        footView.setTitleText(getResources().getString(R.string.add_line));
         footView.setTextColorEnabled(R.color.black);
         footView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,7 +207,7 @@ public class TableActivity extends BaseActivity {
             }
 
             v.line = position;
-            v.mText.setText("第" + (++position) + "行");
+            v.mText.setText("Row." + (++position));
             if (v.view != null) {
                 v.view.requestFocus();
             }

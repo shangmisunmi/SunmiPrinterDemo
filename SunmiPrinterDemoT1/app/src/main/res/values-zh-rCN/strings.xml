@@ -78,7 +78,7 @@
     <string name="twice">双个</string>
     <string name="connect_service">连接服务</string>
     <string name="disconnect_service">断开服务</string>
-    
+
     <!--instruction-->
     <string name="toast_1">事务打印请使用Aidl模式!</string>
     <string name="toast_2">服务已断开!</string>
@@ -89,10 +89,9 @@
     <string name="toast_7">AIDL 暂时只打印单个二维码</string>
     <string name="toast_8">两个二维码尺寸最大为7</string>
     <string name="input_order">请输入指令:</string>
-    
+
     <!--about content-->
-    <string name="about_content">PrinterHelper适用于sunmi系列\nPrinterHelper集成了AIDL和BLUETOOTH两种连接方式，并且提供一系列的打印测试模块，帮助开发者更快的接入sunmi打印功能。\n上传打印信息可以帮助sunmi更好的定位出现的问题。\n官网:http://www.sunmi.com\n开发者文档: http://docs.sunmi.com
-    </string>
+    <string name="about_content">PrinterHelper适用于sunmi系列\nPrinterHelper集成了AIDL和BLUETOOTH两种连接方式，并且提供一系列的打印测试模块，帮助开发者更快的接入sunmi打印功能。\n上传打印信息可以帮助sunmi更好的定位出现的问题。\n官网:http://www.sunmi.com\n开发者文档: http://docs.sunmi.com</string>
 
     <!--function explain-->
     <string name="text_instruction">说明：Sunmi打印字体是等宽字体，除支持常用Epson指令集设置字体结构外，还可以使用AIDL接口调用直接设置字体大小尺寸，测试demo仅使用后者设置字体大小，开发者有意可自己查阅相关Epson指令设置字体变化。\n注意：字符集的设置只影响指令打印不会影响AIDL打印文字，打印单字节字符集需要先设置单字节模式，Sunmi服务默认双字节模式！</string>

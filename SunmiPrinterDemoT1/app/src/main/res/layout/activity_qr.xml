@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="二维码内容"
+            android:text="@string/content_qrcode"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -44,9 +44,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="二维码排列方式"
+            android:text="@string/array_qrcode"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -56,7 +57,7 @@
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/arrow"
             android:gravity="right|center_vertical"
-            android:text="单个"
+            android:text="@string/single"
             android:textColor="@color/gray"
             android:textSize="14sp"/>
     </LinearLayout>
@@ -72,7 +73,7 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="二维码块大小"
+            android:text="@string/size_qrcode"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -97,7 +98,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="二维码纠错等级"
+            android:text="@string/error_qrcode"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 

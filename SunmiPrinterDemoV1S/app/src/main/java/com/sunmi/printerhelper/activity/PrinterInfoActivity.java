@@ -62,7 +62,7 @@ public class PrinterInfoActivity extends BaseActivity{
             ((TextView)findViewById(R.id.info7)).setText(info.get(4));
             ((TextView)findViewById(R.id.info8)).setText(info.get(6));
         }else{
-            Toast.makeText(this, "请连接打印服务！",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.toast_2,Toast.LENGTH_LONG).show();
         }
     }
 

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -202,7 +203,9 @@ public class FunctionActivity extends AppCompatActivity {
 
     private void showAbout() {
         CharSequence charSequenc = getResources().getText(R.string.about_content);
-        TextHintDialog textHintDialog = DialogCreater.createTextHintDialog(this, "关于", "上传打印信息", "GitHub", charSequenc.toString(), null,null, false);
+        TextHintDialog textHintDialog = DialogCreater.createTextHintDialog(this, getResources().getString(R.string.about), getResources().getString(R.string.upload_info), "GitHub", charSequenc.toString(), null,null, false);
+        TextView textView = (TextView)textHintDialog.getDialog().findViewById(R.id.dialog_msg);
+        textView.setGravity(Gravity.LEFT);
         textHintDialog.setCanceledOnTouchOutside(true);
         textHintDialog.show();
     }
