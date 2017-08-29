@@ -104,7 +104,7 @@ public class FunctionActivity extends AppCompatActivity {
                         }
                         if(demoDetails.titleId == R.string.function_multi){
                             if(mHintOneBtnDialog  == null){
-                                mHintOneBtnDialog = DialogCreater.createHintOneBtnDialog(FunctionActivity.this, null, "多线程并发打印", "点击停止", new View.OnClickListener() {
+                                mHintOneBtnDialog = DialogCreater.createHintOneBtnDialog(FunctionActivity.this, null,  getResources().getString(R.string.multithread), getResources().getString(R.string.multithread_stop), new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
                                         ThreadPoolManager.getInstance().killAll();

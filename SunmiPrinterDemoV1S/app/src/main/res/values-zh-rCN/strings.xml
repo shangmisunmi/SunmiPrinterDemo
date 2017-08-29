@@ -79,6 +79,8 @@
     <string name="connect_service">连接服务</string>
     <string name="disconnect_service">断开服务</string>
     <string name="input_order">请输入指令:</string>
+    <string name="multithread">多线程并发打印</string>
+    <string name="multithread_stop">点击停止</string>
 
     <!--instruction-->
     <string name="toast_1">事务打印请使用Aidl模式!</string>
