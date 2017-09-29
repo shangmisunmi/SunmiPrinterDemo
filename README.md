@@ -1,16 +1,13 @@
-# SunmiPrinterDemo
-printer test demo 
-V1 T1 P1 V1s
-
-
-V1printerservice
-
-printerservice 2.2.2:
-1）fix bug 条码问题；左偏移指令问题；跳格问题；阿拉伯文
-遗留bug 条码宽度超过162无法打印；
-
-
-printerservice 2.1.14:
-1）fix bug  设置字符右间距指令1B	20	n
-遗留bug 条码宽度超过162无法打印；左偏移指令；跳格指令；阿拉伯文打印表格问题
-
+SunmiPrinterDemo
+==========
+Printer test demo for Android Studio
+Developer documentation in https://docs.sunmi.com/htmls/index.html?lang=zh 
+    
+Instruction
+----------
+* Project contains four demos, and be careful to use them in accordance with the corresponding machine model
+* The main difference among them is the aidl files, you can find them from : http://ota.cdn.sunmi.com/DOC/resource/re_cn/AIDL.rar
+* How to import?
+    
+    Convert to project in the Android Studio, and build  a Aidl folder under the "src/main" file
+    ![](http://upload-images.jianshu.io/upload_images/1739458-05362df2ccd280cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
