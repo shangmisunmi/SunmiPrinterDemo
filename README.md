@@ -1,8 +1,12 @@
 SunmiPrinterDemo
 ==========
+### 
 Developer documentation : https://docs.sunmi.com
+###
 We strongly recommend developers to use Android Studio to develop.The demo for Android Studio has full functionality, such as printing barcodes, printing qr code, printing text, printing pictures and printing tables.
-Demo for Eclipse:https://github.com/shangmisunmi/SunmiPrinterDemo-Eclipse-/tree/master/PrinterTestDemo_eclipse/src/com/test/printertestdemo   
+###
+Demo for Eclipse:https://github.com/shangmisunmi/SunmiPrinterDemo-Eclipse-/tree/master/PrinterTestDemo_eclipse/src/com/test/printertestdemo  
+
 Instruction
 ----------
 * Project contains four demos, and be careful to use them in accordance with the corresponding machine model
