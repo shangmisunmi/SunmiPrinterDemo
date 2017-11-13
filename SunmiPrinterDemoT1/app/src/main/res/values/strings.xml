@@ -91,6 +91,17 @@
     <string name="input_order">input epson command:</string>
     <string name="multithread">multithread</string>
     <string name="multithread_stop">stop</string>
+    <string name="pic_pos">picture arrangement mode</string>
+    <string name="pic_hor">transverse</string>
+    <string name="pic_ver">portrait</string>
+    <string name="pic_mode">picture printing method</string>
+    <string name="pic_mode1">raster bitmap</string>
+    <string name="pic_mode2">8 point single density</string>
+    <string name="pic_mode3">8 point double density</string>
+    <string name="pic_mode4">24 point single density</string>
+    <string name="pic_mode5">24 point double density</string>
+    <string name="style_width">times width</string>
+    <string name="style_height">times height</string>
 
     <!--about content-->
     <string name="about_content">PrinterHelper is suitable for the sunmi series. \nPrinterHelper integrate two connection type: AIDL and BLUETOOTH. It also provide a series of printing testing module, which help the developer to connect with the sunmi printing function faster. \n upload the information that need to be printed, which allows sunmi to better locate the issues. \n official site: http://www.sunmi.com. \n developer documentation: http://docs.sunmi.com</string>

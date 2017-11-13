@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sunmi.printerhelper.BuildConfig;
 import com.sunmi.printerhelper.R;
 import com.sunmi.printerhelper.utils.AidlUtil;
 import com.sunmi.printerhelper.utils.PrinterCallback;
@@ -40,6 +41,7 @@ public class PrinterInfoActivity extends BaseActivity{
         }else{
             Toast.makeText(this, R.string.toast_2,Toast.LENGTH_LONG).show();
         }
+        ((TextView)findViewById(R.id.info9)).setText(BuildConfig.VERSION_NAME);
     }
 
 }

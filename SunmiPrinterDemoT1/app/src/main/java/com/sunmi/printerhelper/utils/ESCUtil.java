@@ -162,6 +162,18 @@ public class ESCUtil {
 		return BytesUtil.byteMerger(bytes1, bytes2);
 	}
 
+	//光栅位图打印 设置mode
+	public static byte[] printBitmap(Bitmap bitmap, int mode){
+		byte[] bytes1  = new byte[4];
+		bytes1[0] = GS;
+		bytes1[1] = 0x76;
+		bytes1[2] = 0x30;
+		bytes1[3] = (byte) mode;
+
+		byte[] bytes2 = BytesUtil.getBytesFromBitMap(bitmap);
+		return BytesUtil.byteMerger(bytes1, bytes2);
+	}
+
 	//光栅位图打印
 	public static byte[] printBitmap(byte[] bytes){
 		byte[] bytes1  = new byte[4];
@@ -171,6 +183,15 @@ public class ESCUtil {
 		bytes1[3] = 0x00;
 
 		return BytesUtil.byteMerger(bytes1, bytes);
+	}
+
+
+	/*
+	*	选择位图指令 设置mode
+	*	需要设置1B 33 00将行间距设为0
+	 */
+	public static byte[] selectBitmap(Bitmap bitmap, int mode){
+		return BytesUtil.byteMerger(BytesUtil.byteMerger(new byte[]{0x1B, 0x33, 0x00}, BytesUtil.getBytesFromBitMap(bitmap, mode)), new byte[]{0x0A, 0x1B, 0x32});
 	}
 
 	/**
@@ -312,6 +333,18 @@ public class ESCUtil {
 		result[1] = 97;
 		result[2] = 2;
 		return result;
+	}
+
+	//切刀
+	public static byte[] cutter() {
+		byte[] data = new byte[]{0x1d, 0x56, 0x01};
+		return data;
+	}
+
+	//走纸到黑标
+	public static byte[] gogogo(){
+		byte[] data = new byte[]{0x1C, 0x28, 0x4C, 0x02, 0x00, 0x42, 0x31};
+		return data;
 	}
 
 

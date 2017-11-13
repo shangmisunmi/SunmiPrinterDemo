@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.sunmi.printerhelper.R;
 import com.sunmi.printerhelper.utils.AidlUtil;
@@ -21,8 +20,6 @@ import sunmi.sunmiui.dialog.ListDialog;
 
 public class SettingActivity extends BaseActivity implements View.OnClickListener{
     String[] method = new String[]{"AIDL", "BlueTooth"};
-    String[] size = new String[]{"80mm", "58mm"};
-    String[] concentration = new String[]{"130%", "125%","120%","115%","110%","105%","100%","95%","90%","85%","80%","75%","70%"};
 
     private TextView mTextView1, mTextView2;
 
@@ -34,8 +31,6 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
         setBack();
 
         findViewById(R.id.setting_connect).setOnClickListener(this);
-        findViewById(R.id.setting_size).setOnClickListener(this);
-        findViewById(R.id.setting_concentration).setOnClickListener(this);
         findViewById(R.id.setting_info).setOnClickListener(this);
 
         mTextView1 = (TextView)findViewById(R.id.setting_conected);
@@ -97,29 +92,6 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                             }
                         }
                         setMyTitle(R.string.setting_title);
-                        listDialog.cancel();
-                    }
-                });
-                listDialog.show();
-                break;
-            case R.id.setting_size:
-                listDialog = DialogCreater.createListDialog(this, getResources().getString(R.string.size_paper), getResources().getString(R.string.cancel), size);
-                listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
-                    @Override
-                    public void OnItemClick(int position) {
-                        ((TextView)findViewById(R.id.setting_textview2)).setText(size[position]);
-                        listDialog.cancel();
-                    }
-                });
-                listDialog.show();
-                break;
-            case R.id.setting_concentration:
-                listDialog = DialogCreater.createListDialog(this, getResources().getString(R.string.print_density), getResources().getString(R.string.cancel), concentration);
-                listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
-                    @Override
-                    public void OnItemClick(int position) {
-                        ((TextView)findViewById(R.id.setting_textview3)).setText(concentration[position]);
-                        AidlUtil.getInstance().setDarkness(position);
                         listDialog.cancel();
                     }
                 });

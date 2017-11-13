@@ -252,6 +252,34 @@ public class AidlUtil {
     }
 
     /**
+     *  打印图片和文字按照指定排列顺序
+     */
+    public void printBitmap(Bitmap bitmap, int orientation) {
+        if (woyouService == null) {
+            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        try {
+            if(orientation == 0){
+                woyouService.printBitmap(bitmap, null);
+                woyouService.printText("横向排列\n", null);
+                woyouService.printBitmap(bitmap, null);
+                woyouService.printText("横向排列\n", null);
+            }else{
+                woyouService.printBitmap(bitmap, null);
+                woyouService.printText("\n纵向排列\n", null);
+                woyouService.printBitmap(bitmap, null);
+                woyouService.printText("\n纵向排列\n", null);
+            }
+            woyouService.lineWrap(3, null);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
      * 打印表格
      */
     public void printTable(LinkedList<TableItem> list) {
@@ -299,5 +327,22 @@ public class AidlUtil {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+    }
+
+    //获取当前的打印模式
+    public int getPrintMode(){
+        if(woyouService == null){
+            Toast.makeText(context,"服务已断开！",Toast.LENGTH_LONG).show();
+            return -1;
+        }
+
+        int res;
+        try {
+            res =  woyouService.getPrinterMode();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            res = -1;
+        }
+        return res;
     }
 }

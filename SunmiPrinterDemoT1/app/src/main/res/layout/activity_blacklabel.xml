@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp"
+              android:orientation="vertical"
+              android:divider="@drawable/account_line"
+              android:dividerPadding="1dp"
+              android:showDividers="middle|end|beginning">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="黑标颜色要求：反射率不超过 6%，红外波长 700-1000nm 范围内。"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="黑标颜色要求：反射率不超过 6%，红外波长 700-1000nm 范围内。"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="检测黑标：检测黑标的最长走纸距离为600mm"/>
+
+    <Button
+        android:id="@+id/bl_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="黑标设置"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/bl_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="检测黑标"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/bl_sample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="黑标小票样张"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+</LinearLayout>
