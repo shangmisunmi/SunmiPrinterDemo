@@ -15,20 +15,13 @@ import com.sunmi.printerhelper.utils.BitmapUtil;
 import com.sunmi.printerhelper.utils.BluetoothUtil;
 import com.sunmi.printerhelper.utils.ESCUtil;
 
-import java.io.IOException;
-
 import sunmi.sunmiui.dialog.DialogCreater;
 import sunmi.sunmiui.dialog.EditTextDialog;
 import sunmi.sunmiui.dialog.ListDialog;
 
-
-/**
- * Created by Administrator on 2017/4/28.
- */
-
 public class QrActivity extends BaseActivity {
     private ImageView mImageView;
-    private TextView mTextView1, mTextView2, mTextView3, mTextView4;
+    private TextView mTextView1, mTextView2, mTextView3, mTextView4, mTextView5;
     private int print_num = 0;
     private int print_size = 8;
     private int error_level = 3;
@@ -46,6 +39,7 @@ public class QrActivity extends BaseActivity {
         mTextView2 = (TextView) findViewById(R.id.qr_text_num);
         mTextView3 = (TextView) findViewById(R.id.qr_text_size);
         mTextView4 = (TextView) findViewById(R.id.qr_text_el);
+        mTextView5 = (TextView) findViewById(R.id.qr_align_info);
 
         findViewById(R.id.qr_content).setOnClickListener(new View.OnClickListener() {
             EditTextDialog mDialog;
@@ -124,6 +118,35 @@ public class QrActivity extends BaseActivity {
                     public void OnItemClick(int position) {
                         mTextView4.setText(el[position]);
                         error_level = position;
+                        listDialog.cancel();
+                    }
+                });
+                listDialog.show();
+            }
+        });
+
+        findViewById(R.id.qr_align).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                final String[] pos = new String[]{getResources().getString(R.string.align_left),getResources().getString(R.string.align_mid), getResources().getString(R.string.align_right)};
+                final ListDialog listDialog =  DialogCreater.createListDialog(QrActivity.this, getResources().getString(R.string.align_form), getResources().getString(R.string.cancel), pos);
+                listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
+                    @Override
+                    public void OnItemClick(int position) {
+                        mTextView5.setText(pos[position]);
+                        byte[] send;
+                        if(position == 0){
+                            send = ESCUtil.alignLeft();
+                        }else if(position == 1){
+                            send = ESCUtil.alignCenter();
+                        }else {
+                            send = ESCUtil.alignRight();
+                        }
+                        if(baseApp.isAidl()){
+                            AidlUtil.getInstance().sendRawData(send);
+                        }else{
+                            BluetoothUtil.sendData(send);
+                        }
                         listDialog.cancel();
                     }
                 });

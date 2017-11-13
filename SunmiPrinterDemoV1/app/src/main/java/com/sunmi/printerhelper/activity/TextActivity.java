@@ -1,14 +1,17 @@
 package com.sunmi.printerhelper.activity;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -30,6 +33,7 @@ public class TextActivity extends BaseActivity implements CompoundButton.OnCheck
     private TextView mTextView1, mTextView2;
     private CheckBox mCheckBox1, mCheckBox2;
     private EditText mEditText;
+    private LinearLayout mLayout, mLinearLayout;
     private int record;
     private boolean isBold, isUnderLine;
 
@@ -50,6 +54,22 @@ public class TextActivity extends BaseActivity implements CompoundButton.OnCheck
         mCheckBox1 = (CheckBox) findViewById(R.id.text_bold);
         mCheckBox2 = (CheckBox) findViewById(R.id.text_underline);
         mEditText = (EditText) findViewById(R.id.text_text);
+
+        mLinearLayout = (LinearLayout) findViewById(R.id.text_all);
+        mLayout = (LinearLayout) findViewById(R.id.text_set);
+
+        mLinearLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                Rect r = new Rect();
+                mLinearLayout.getWindowVisibleDisplayFrame(r);
+                if(r.bottom < 800){
+                    mLayout.setVisibility(View.GONE);
+                }else{
+                    mLayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         mCheckBox1.setOnCheckedChangeListener(this);
         mCheckBox2.setOnCheckedChangeListener(this);

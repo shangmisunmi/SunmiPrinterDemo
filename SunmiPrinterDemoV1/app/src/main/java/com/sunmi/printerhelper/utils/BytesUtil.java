@@ -218,6 +218,67 @@ public class BytesUtil {
 		return rv;
 	}
 
+	/**
+	 * 将bitmap转成按mode指定的N点行数据
+	 */
+	public static byte[] getBytesFromBitMap(Bitmap bitmap, int mode) {
+		int width = bitmap.getWidth();
+		int height = bitmap.getHeight();
+		int[] pixels = new int[width*height];
+		if(mode == 0 || mode == 1){
+			byte[] res = new byte[width*height/8 + 5*height/8];
+			bitmap.getPixels(pixels, 0, width, 0, 0, width, height);
+			for(int i = 0; i < height/8; i++){
+				res[0 + i*(width+5)] = 0x1b;
+				res[1 + i*(width+5)] = 0x2a;
+				res[2 + i*(width+5)] = (byte) mode;
+				res[3 + i*(width+5)] = (byte) (width%256);
+				res[4 + i*(width+5)] = (byte) (width/256);
+				for(int j = 0; j < width; j++){
+					byte gray = 0;
+					for(int m = 0; m < 8; m++){
+						int clr = pixels[j + width*(i*8+m)];
+						int red = (clr & 0x00ff0000) >> 16;
+						int green = (clr & 0x0000ff00) >> 8;
+						int blue = clr & 0x000000ff;
+						gray = (byte) ((RGB2Gray(red, green, blue)<<(7-m))|gray);
+					}
+					res[5 + j + i*(width+5)] = gray;
+				}
+			}
+			return res;
+		}else if(mode == 32 || mode == 33){
+			byte[] res = new byte[width*height/8 + 5*height/24];
+			bitmap.getPixels(pixels, 0, width, 0, 0, width, height);
+			for(int i = 0; i < height/24; i++){
+				res[0 + i*(width*3+5)] = 0x1b;
+				res[1 + i*(width*3+5)] = 0x2a;
+				res[2 + i*(width*3+5)] = (byte) mode;
+				res[3 + i*(width*3+5)] = (byte) (width%256);
+				res[4 + i*(width*3+5)] = (byte) (width/256);
+				for(int j = 0; j < width; j++){
+					for(int n = 0; n < 3; n++){
+						byte gray = 0;
+						for(int m = 0; m < 8; m++){
+							int clr = pixels[j + width*(i*24 + m + n*8)];
+							int red = (clr & 0x00ff0000) >> 16;
+							int green = (clr & 0x0000ff00) >> 8;
+							int blue = clr & 0x000000ff;
+							gray = (byte) ((RGB2Gray(red, green, blue)<<(7-m))|gray);
+						}
+						res[5 + j*3 + i*(width*3+5) + n] = gray;
+					}
+				}
+			}
+			return res;
+		}else{
+			return new byte[]{0x0A};
+		}
+
+	}
+
+
+
 	private static byte RGB2Gray(int r, int g, int b) {
 		return (false ? ((int) (0.29900 * r + 0.58700 * g + 0.11400 * b) > 200)
 				: ((int) (0.29900 * r + 0.58700 * g + 0.11400 * b) < 200)) ? (byte) 1 : (byte) 0;
