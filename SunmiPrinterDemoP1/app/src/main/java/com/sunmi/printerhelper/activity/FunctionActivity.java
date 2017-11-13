@@ -2,6 +2,7 @@ package com.sunmi.printerhelper.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sunmi.printerhelper.R;
 import com.sunmi.printerhelper.threadhelp.ThreadPoolManager;
@@ -48,6 +50,8 @@ public class FunctionActivity extends AppCompatActivity {
                     null),
             new DemoDetails(R.string.function_threeline, R.drawable.function_threeline,
                     null),
+            new DemoDetails(R.string.function_buffer, R.drawable.function_threeline,
+                    BufferActivity.class),
     };
 
     private RecyclerView mRecyclerView;
@@ -98,7 +102,15 @@ public class FunctionActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if(demoDetails != null && demoDetails.activityClass != null)
-                            startActivity(new Intent(FunctionActivity.this, demoDetails.activityClass));
+                        {
+                            if(demoDetails.titleId == R.string.function_buffer &&
+                                    !(Build.MODEL.contains("P1") || Build.MODEL.contains("p1") || Build.MODEL.contains("V1s") || Build.MODEL.contains("v1s") || Build.MODEL.contains("P2") || Build.MODEL.contains("p2"))){
+                                Toast.makeText(FunctionActivity.this, "本功能只能应用指定机型！", Toast.LENGTH_LONG).show();
+                            }else{
+                                startActivity(new Intent(FunctionActivity.this, demoDetails.activityClass));
+                            }
+                            return;
+                        }
                         if(demoDetails.titleId == R.string.function_threeline){
                             AidlUtil.getInstance().print3Line();
                         }
