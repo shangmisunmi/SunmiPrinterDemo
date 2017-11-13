@@ -10,6 +10,7 @@
     <string name="function_pic">图片</string>
     <string name="function_multi">多线程</string>
     <string name="function_threeline">空打三行</string>
+    <string name="function_buffer">事务打印</string>
 
     <!--titles-->
     <string name="setting_title">设置</string>
@@ -20,6 +21,7 @@
     <string name="bitmap_title">图片打印测试</string>
     <string name="tab_title">表格打印测试</string>
     <string name="all_title">综合测试</string>
+    <string name="buffer_title">事务打印测试</string>
 
     <!--text-->
     <string name="printer_serial_num">打印机序列号</string>
@@ -81,6 +83,17 @@
     <string name="input_order">请输入指令:</string>
     <string name="multithread">多线程并发打印</string>
     <string name="multithread_stop">点击停止</string>
+    <string name="pic_pos">图片排列方式</string>
+    <string name="pic_hor">横向</string>
+    <string name="pic_ver">纵向</string>
+    <string name="pic_mode">图片打印方式</string>
+    <string name="pic_mode1">光栅位图</string>
+    <string name="pic_mode2">8点单密度</string>
+    <string name="pic_mode3">8点双密度</string>
+    <string name="pic_mode4">24点单密度</string>
+    <string name="pic_mode5">24点双密度</string>
+    <string name="style_width">倍宽</string>
+    <string name="style_height">倍高</string>
 
     <!--instruction-->
     <string name="toast_1">事务打印请使用Aidl模式!</string>

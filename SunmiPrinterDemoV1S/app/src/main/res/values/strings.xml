@@ -10,6 +10,7 @@
     <string name="function_pic">Picture</string>
     <string name="function_multi">Multi Threading</string>
     <string name="function_threeline">Paper Feed</string>
+    <string name="function_buffer">Transaction Print</string>
 
     <!--titles-->
     <string name="setting_title">Setting</string>
@@ -20,6 +21,7 @@
     <string name="bitmap_title">Picture Test</string>
     <string name="tab_title">Form Test</string>
     <string name="all_title">Comprehensive Test</string>
+    <string name="buffer_title">Transaction Test</string>
 
     <!--text-->
     <string name="printer_serial_num">serial number</string>
@@ -81,6 +83,17 @@
     <string name="input_order">input epson command:</string>
     <string name="multithread">multithread</string>
     <string name="multithread_stop">stop</string>
+    <string name="pic_pos">picture arrangement mode</string>
+    <string name="pic_hor">transverse</string>
+    <string name="pic_ver">portrait</string>
+    <string name="pic_mode">picture printing method</string>
+    <string name="pic_mode1">raster bitmap</string>
+    <string name="pic_mode2">8 point single density</string>
+    <string name="pic_mode3">8 point double density</string>
+    <string name="pic_mode4">24 point single density</string>
+    <string name="pic_mode5">24 point double density</string>
+    <string name="style_width">times width</string>
+    <string name="style_height">times height</string>
 
     <!--instruction-->
     <string name="toast_1">Transaction print,use the AIDL mode!</string>

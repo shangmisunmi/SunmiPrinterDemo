@@ -22,9 +22,6 @@ import woyou.aidlservice.jiuiv5.ICallback;
  */
 
 public class AllActivity extends BaseActivity implements View.OnClickListener {
-    boolean mark = false;
-    LoadingDialog mDialog;
-    byte[] temp;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,27 +36,6 @@ public class AllActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.multi_four).setOnClickListener(this);
         findViewById(R.id.multi_five).setOnClickListener(this);
         findViewById(R.id.multi_six).setOnClickListener(this);
-
-        findViewById(R.id.multi_buffer).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!baseApp.isAidl()){
-                    Toast.makeText(AllActivity.this, R.string.toast_1, Toast.LENGTH_LONG).show();
-                    return;
-                }else{
-                    if(mark){
-                        mark = false;
-                        v.setBackgroundColor(getResources().getColor(R.color.text));
-                        ((TextView)v).setText(R.string.enter_work);
-                    }else{
-                        mark = true;
-                        v.setBackgroundColor(getResources().getColor(R.color.gray));
-                        ((TextView)v).setText(R.string.exit_work);
-                    }
-
-                }
-            }
-        });
     }
 
     @Override
@@ -86,46 +62,8 @@ public class AllActivity extends BaseActivity implements View.OnClickListener {
                 break;
         }
 
-        if(mark){
-            sendDataThread(rv);
-        }else{
-            sendData(rv);
-        }
+        sendData(rv);
     }
-
-    ICallback mICallback = new ICallback.Stub() {
-        @Override
-        public void onRunResult(boolean isSuccess) throws RemoteException {
-
-        }
-
-        @Override
-        public void onReturnString(String result) throws RemoteException {
-
-        }
-
-        @Override
-        public void onRaiseException(int code, String msg) throws RemoteException {
-
-        }
-
-        @Override
-        public void onPrintResult(int code, String msg) throws RemoteException {
-            if(code == 0){
-                mDialog.cancel();
-            }else{
-                AidlUtil.getInstance().sendRawDatabyBuffer(temp, mICallback);
-            }
-        }
-    };
-
-    private void sendDataThread(byte[] send){
-        mDialog = DialogCreater.createLoadingDialog(this, getResources().getString(R.string.printing));
-        mDialog.show();
-        temp = send;
-        AidlUtil.getInstance().sendRawDatabyBuffer(temp, mICallback);
-    }
-
 
     private void sendData(final byte[] send){
         if(baseApp.isAidl()){

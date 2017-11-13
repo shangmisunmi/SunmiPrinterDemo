@@ -31,12 +31,15 @@
             android:parentActivityName=".activity.FunctionActivity"/>
         <activity
             android:name=".activity.TextActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:parentActivityName=".activity.FunctionActivity"/>
         <activity android:name=".activity.BitmapActivity"
             android:parentActivityName=".activity.FunctionActivity"/>
         <activity android:name=".activity.TableActivity"
                   android:parentActivityName=".activity.FunctionActivity"/>
         <activity android:name=".activity.AllActivity"
+                  android:parentActivityName=".activity.FunctionActivity"/>
+        <activity android:name=".activity.BufferActivity"
                   android:parentActivityName=".activity.FunctionActivity"/>
     </application>
 
