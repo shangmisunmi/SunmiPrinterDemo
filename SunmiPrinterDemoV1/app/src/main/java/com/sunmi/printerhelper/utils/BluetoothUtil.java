@@ -87,6 +87,7 @@ public class BluetoothUtil {
                 OutputStream out = bluetoothSocket.getOutputStream();
                 out.close();
                 bluetoothSocket.close();
+                bluetoothSocket = null;
             } catch (IOException e) {
                 e.printStackTrace();
             }
