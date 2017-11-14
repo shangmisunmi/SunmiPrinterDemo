@@ -15,7 +15,7 @@ public class ThreadPoolManager {
 
 	private ThreadPoolManager() {
 		int num = Runtime.getRuntime().availableProcessors() * 20;
-		service = Executors.newFixedThreadPool(2);
+		service = Executors.newFixedThreadPool(num);
 	}
 
 	private static final ThreadPoolManager manager = new ThreadPoolManager();
@@ -35,7 +35,4 @@ public class ThreadPoolManager {
 		}
 	}
 
-	public void killAll(){
-		service.shutdownNow();
-	}
 }

@@ -28,6 +28,7 @@ import sunmi.sunmiui.dialog.TextHintDialog;
 
 public class FunctionActivity extends AppCompatActivity {
     HintOneBtnDialog mHintOneBtnDialog;
+    boolean run;
 
     /**
      * 在这里增加打印示例
@@ -49,7 +50,7 @@ public class FunctionActivity extends AppCompatActivity {
                     null),
             new DemoDetails(R.string.function_threeline, R.drawable.function_threeline,
                     null),
-            new DemoDetails(R.string.function_blackline, R.drawable.function_threeline,
+            new DemoDetails(R.string.function_blackline, R.drawable.function_blackline,
                     BlackLabelActivity.class),
     };
 
@@ -110,17 +111,17 @@ public class FunctionActivity extends AppCompatActivity {
                                 mHintOneBtnDialog = DialogCreater.createHintOneBtnDialog(FunctionActivity.this, null, getResources().getString(R.string.multithread), getResources().getString(R.string.multithread_stop), new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        ThreadPoolManager.getInstance().killAll();
+                                        run = false;
                                         mHintOneBtnDialog.cancel();
                                     }
                                 });
                             }
                             mHintOneBtnDialog.show();
-
+                            run = true;
                             ThreadPoolManager.getInstance().executeTask(new Runnable() {
                                 @Override
                                 public void run() {
-                                    while(!Thread.currentThread().isInterrupted()){
+                                    while(run){
                                         AidlUtil.getInstance().sendRawData(BytesUtil.getBaiduTestBytes());
                                         try {
                                             Thread.sleep(4000);
@@ -135,7 +136,7 @@ public class FunctionActivity extends AppCompatActivity {
                             ThreadPoolManager.getInstance().executeTask(new Runnable() {
                                 @Override
                                 public void run() {
-                                    while(!Thread.currentThread().isInterrupted()){
+                                    while(run){
                                         AidlUtil.getInstance().sendRawData(BytesUtil.getKoubeiData());
                                         try {
                                             Thread.sleep(4000);
@@ -149,7 +150,7 @@ public class FunctionActivity extends AppCompatActivity {
                             ThreadPoolManager.getInstance().executeTask(new Runnable() {
                                 @Override
                                 public void run() {
-                                    while(!Thread.currentThread().isInterrupted()){
+                                    while(run){
                                         AidlUtil.getInstance().sendRawData(BytesUtil.getErlmoData());
                                         try {
                                             Thread.sleep(4000);
@@ -163,7 +164,7 @@ public class FunctionActivity extends AppCompatActivity {
                             ThreadPoolManager.getInstance().executeTask(new Runnable() {
                                 @Override
                                 public void run() {
-                                    while(!Thread.currentThread().isInterrupted()){
+                                    while(run){
                                         AidlUtil.getInstance().sendRawData(BytesUtil.getMeituanBill());
                                         try {
                                             Thread.sleep(5000);
