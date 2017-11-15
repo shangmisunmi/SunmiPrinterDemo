@@ -50,7 +50,7 @@ public class BlackLabelActivity extends BaseActivity{
                         BluetoothUtil.sendData(ESCUtil.gogogo());
                     }
                 }else{
-                    Toast.makeText(BlackLabelActivity.this, "请设置打印机为黑标模式！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(BlackLabelActivity.this, R.string.toast_9, Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -59,7 +59,7 @@ public class BlackLabelActivity extends BaseActivity{
             @Override
             public void onClick(View v) {
                 if(AidlUtil.getInstance().getPrintMode() != 1){
-                    Toast.makeText(BlackLabelActivity.this, "请设置打印机为黑标模式！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(BlackLabelActivity.this, R.string.toast_9, Toast.LENGTH_LONG).show();
                 }else{
                     byte[] rv = ESCUtil.getPrintQRCode("www.sunmi.com", 6, 3);
                     rv = BytesUtil.byteMerger(rv, new byte[]{0xa, 0xa,0xa});

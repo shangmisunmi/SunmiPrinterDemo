@@ -62,10 +62,10 @@ public class BufferActivity extends BaseActivity {
             public void onClick(View v) {
                 byte[] rv = BytesUtil.getBaiduTestBytes();
                 if(mark){
-                    mTextView.setText("开始事务打印");
+                    mTextView.setText(R.string.start_work);
                     AidlUtil.getInstance().sendRawDatabyBuffer(rv, mICallback);
                 }else{
-                    mTextView.setText("开始普通打印");
+                    mTextView.setText(R.string.start_work_low);
                     AidlUtil.getInstance().sendRawData(rv);
                 }
             }
@@ -96,9 +96,9 @@ public class BufferActivity extends BaseActivity {
                 @Override
                 public void run() {
                     if(res == 0){//打印成功
-                        mTextView.setText("事务打印结束");
+                        mTextView.setText(R.string.over_work);
                     }else{//打印失败
-                        mTextView.setText("发生异常 打印中断");
+                        mTextView.setText(R.string.error_work);
                     }
                 }
             });

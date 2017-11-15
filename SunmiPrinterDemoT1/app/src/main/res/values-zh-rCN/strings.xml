@@ -80,6 +80,12 @@
     <string name="twice">双个</string>
     <string name="connect_service">连接服务</string>
     <string name="disconnect_service">断开服务</string>
+    <string name="bl_info1">黑标颜色要求：反射率不超过 6%，红外波长 700-1000nm 范围内。</string>
+    <string name="bl_info2">黑标位置要求：黑标需要在纸张水平中间位置才能被传感器器检测到。</string>
+    <string name="bl_info3">检测黑标：检测黑标的最长走纸距离为600mm.</string>
+    <string name="bl_set">黑标设置</string>
+    <string name="bl_check">黑标检测</string>
+    <string name="bl_sample">黑标小票样张</string>
 
     <!--instruction-->
     <string name="toast_1">事务打印请使用Aidl模式!</string>
@@ -90,6 +96,7 @@
     <string name="toast_6">蓝牙连接失败!</string>
     <string name="toast_7">AIDL 暂时只打印单个二维码</string>
     <string name="toast_8">两个二维码尺寸最大为7</string>
+    <string name="toast_9">请设置打印机为黑标模式!</string>
     <string name="input_order">请输入指令:</string>
     <string name="multithread">多线程并发打印</string>
     <string name="multithread_stop">点击停止</string>

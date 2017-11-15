@@ -34,6 +34,10 @@
     <string name="printer_dev_version">development version</string>
     <string name="enter_work">Enter Transaction</string>
     <string name="exit_work">Exit Transaction</string>
+    <string name="start_work">Start Transaction</string>
+    <string name="start_work_low">Start Printing</string>
+    <string name="over_work">End Transaction</string>
+    <string name="error_work">Exception Occurred</string>
     <string name="print_baidu_ticket">Print Baidu ticket</string>
     <string name="print_meituan_ticket">Print Meituan ticket</string>
     <string name="print_eleme_ticket">Print Eleme ticket</string>
@@ -94,6 +98,9 @@
     <string name="pic_mode5">24 point double density</string>
     <string name="style_width">times width</string>
     <string name="style_height">times height</string>
+    <string name="buffer_info1">Event Print: Controls the print of each order for print status\nIn the process of printing a single transaction, if there is an out-of-paper abnormalities, after the paper state is restored, you can choose to reprint a single.</string>
+    <string name="buffer_info2">Step1:start event print model\nStep2:add an event\nStep3:quit event print model</string>
+
 
     <!--instruction-->
     <string name="toast_1">Transaction print,use the AIDL mode!</string>

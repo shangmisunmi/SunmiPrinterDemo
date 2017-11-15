@@ -34,6 +34,10 @@
     <string name="printer_dev_version">打印服务开发版本</string>
     <string name="enter_work">进入事务打印</string>
     <string name="exit_work">退出事务打印</string>
+    <string name="start_work">开始事务打印</string>
+    <string name="start_work_low">开始普通打印</string>
+    <string name="over_work">事务打印结束</string>
+    <string name="error_work">发生异常 打印中断</string>
     <string name="print_baidu_ticket">打印百度小票</string>
     <string name="print_meituan_ticket">打印美团小票</string>
     <string name="print_eleme_ticket">打印饿了么小票</string>
@@ -94,7 +98,9 @@
     <string name="pic_mode5">24点双密度</string>
     <string name="style_width">倍宽</string>
     <string name="style_height">倍高</string>
-    
+    <string name="buffer_info1">事务打印：控制每单的打印，可获取打印状态\n在事务打印一单过程中，如果出现缺纸异常，在恢复有纸状态后，可选择重新打印一单。</string>
+    <string name="buffer_info2">第一步：点击进入事务模式\n第二步：提交事务--打印百度小票\n第三步：退出事务模式</string>
+
     <!--instruction-->
     <string name="toast_1">事务打印请使用Aidl模式!</string>
     <string name="toast_2">服务已断开!</string>

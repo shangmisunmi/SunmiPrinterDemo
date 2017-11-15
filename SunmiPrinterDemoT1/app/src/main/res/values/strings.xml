@@ -88,6 +88,7 @@
     <string name="toast_6">Bluetooth connect failed!</string>
     <string name="toast_7"> Only a single Qr code is printed for the AIDL mode</string>
     <string name="toast_8">Now QrCode size must be less than 7!</string>
+    <string name="toast_9">Please set the printer as black label mode!</string>
     <string name="input_order">input epson command:</string>
     <string name="multithread">multithread</string>
     <string name="multithread_stop">stop</string>
@@ -102,6 +103,12 @@
     <string name="pic_mode5">24 point double density</string>
     <string name="style_width">times width</string>
     <string name="style_height">times height</string>
+    <string name="bl_info1">Color requirements: reflectivity does not exceed 6%, infrared wavelength 700-1000nm range.</string>
+    <string name="bl_info2">Position requirements:Black label needs to be in the middle of the paper level sensor can be detected.</string>
+    <string name="bl_info3">Detection of black label: The printer will feed the paper (up to 600mm)to detect the black label</string>
+    <string name="bl_set">Black label setting</string>
+    <string name="bl_check">Black label checking</string>
+    <string name="bl_sample">Black label sample</string>
 
     <!--about content-->
     <string name="about_content">PrinterHelper is suitable for the sunmi series. \nPrinterHelper integrate two connection type: AIDL and BLUETOOTH. It also provide a series of printing testing module, which help the developer to connect with the sunmi printing function faster. \n upload the information that need to be printed, which allows sunmi to better locate the issues. \n official site: http://www.sunmi.com. \n developer documentation: http://docs.sunmi.com</string>

@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:gravity="center_vertical"
-        android:text="事务打印：控制每单的打印，可获取打印状态在事务打印一单过程中，如果出现缺纸异常，在恢复有纸状态后，可选择重新打印一单。"
+        android:text="@string/buffer_info1"
         android:textColor="@color/white"
         android:textSize="14sp"/>
 
@@ -22,15 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:gravity="center_vertical"
-        android:text="事务打印：控制每单的打印，可获取打印状态\n在事务打印一单过程中，如果出现缺纸异常，在恢复有纸状态后，可选择重新打印一单。"
-        android:textColor="@color/white"
-        android:textSize="14sp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:gravity="center_vertical"
-        android:text="第一步：点击进入事务模式\n第二步：提交事务--打印百度小票\n第三步：退出事务模式"
+        android:text="@string/buffer_info2"
         android:textColor="@color/white"
         android:textSize="14sp"/>
 
@@ -56,7 +48,7 @@
             android:background="@color/text"
             android:gravity="center"
             android:padding="10dp"
-            android:text="进入事务打印"
+            android:text="@string/enter_work"
             android:textColor="@color/white"
             android:textSize="18sp"/>
 
@@ -68,7 +60,7 @@
             android:background="@color/gray"
             android:gravity="center"
             android:padding="10dp"
-            android:text="打印百度小票"
+            android:text="@string/print_baidu_ticket"
             android:textColor="@color/white"
             android:textSize="18sp"/>
     </LinearLayout>
