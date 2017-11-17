@@ -41,7 +41,7 @@ android {
     android.applicationVariants.all {
         variant ->
             variant.outputs.each {
-                output -> output.outputFile = new File(output.outputFile.parent, "PrinterDemo_" + defaultConfig.versionName + "_b.apk");
+                output -> output.outputFile = new File(output.outputFile.parent, "PrinterDemo_" + defaultConfig.versionName + "_P1.apk");
             }
     }
 
