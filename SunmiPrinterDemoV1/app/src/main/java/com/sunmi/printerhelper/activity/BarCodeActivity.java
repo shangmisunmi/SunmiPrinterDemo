@@ -74,7 +74,7 @@ public class BarCodeActivity extends BaseActivity {
         findViewById(R.id.bc_encode).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String[] list = new String[]{"UPC-A", "UPC-E", "EAN13", "EAN8", "CODE39", "ITF", "CODABAR", "CODE93", "CODE128"};
+                final String[] list = new String[]{"UPC-A", "UPC-E", "EAN13", "EAN8", "CODE39", "ITF", "CODABAR", "CODE93", "CODE128A", "CODE128B", "CODE128C"};
                 final ListDialog listDialog = DialogCreater.createListDialog(BarCodeActivity.this, getResources().getString(R.string.encode_barcode), getResources().getString(R.string.cancel), list);
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
@@ -125,7 +125,13 @@ public class BarCodeActivity extends BaseActivity {
 
     public void onClick(View view) {
         String text = mTextView1.getText().toString();
-        Bitmap bitmap = BitmapUtil.generateBitmap(text, encode, 700, 400);
+        int symbology;
+        if(encode > 7){
+            symbology = 8;
+        }else{
+            symbology = encode;
+        }
+        Bitmap bitmap = BitmapUtil.generateBitmap(text, symbology, 700, 400);
         if (bitmap != null) {
             mImageView.setImageDrawable(new BitmapDrawable(bitmap));
         }

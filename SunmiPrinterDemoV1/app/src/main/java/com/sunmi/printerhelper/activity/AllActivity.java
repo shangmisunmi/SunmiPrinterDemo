@@ -1,5 +1,7 @@
 package com.sunmi.printerhelper.activity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
@@ -12,6 +14,8 @@ import com.sunmi.printerhelper.utils.AidlUtil;
 import com.sunmi.printerhelper.utils.BluetoothUtil;
 import com.sunmi.printerhelper.utils.BytesUtil;
 import com.sunmi.printerhelper.utils.ESCUtil;
+
+import java.io.UnsupportedEncodingException;
 
 import sunmi.sunmiui.dialog.DialogCreater;
 import sunmi.sunmiui.dialog.LoadingDialog;
@@ -69,5 +73,52 @@ public class AllActivity extends BaseActivity implements View.OnClickListener {
         }else{
             BluetoothUtil.sendData(send);
         }
+    }
+
+    //打印小票样张（涵盖所有epson指令）
+    public void onPrint(View view) {
+        byte[] rv = BytesUtil.customData();
+        Bitmap head = BitmapFactory.decodeResource(getResources(), R.mipmap.sunmi);
+        //打印光栅位图
+        rv = BytesUtil.byteMerger(rv,ESCUtil.printBitmap(head, 0));
+        //打印光栅位图  倍宽
+        rv = BytesUtil.byteMerger(rv,ESCUtil.printBitmap(head, 1));
+        //打印光栅位图  倍高
+        rv = BytesUtil.byteMerger(rv,ESCUtil.printBitmap(head, 2));
+        //打印光栅位图  倍宽倍高
+        rv = BytesUtil.byteMerger(rv,ESCUtil.printBitmap(head, 3));
+        //选择位图指令  8点单密度
+        rv = BytesUtil.byteMerger(rv,ESCUtil.selectBitmap(head, 0));
+        //选择位图指令  8点双密度
+        rv = BytesUtil.byteMerger(rv,ESCUtil.selectBitmap(head, 1));
+        //选择位图指令  24点单密度
+        rv = BytesUtil.byteMerger(rv,ESCUtil.selectBitmap(head, 32));
+        //选择位图指令  24点双密度
+        rv = BytesUtil.byteMerger(rv,ESCUtil.selectBitmap(head, 33));
+        //之后将输出可显示的ascii码及制表符
+        rv = BytesUtil.byteMerger(rv,BytesUtil.wordData());
+        byte[] ascii = new byte[96];
+        for(int i = 0; i < 95; i++){
+            ascii[i] = (byte) (0x20+i);
+        }
+        ascii[95] = 0x0A;
+        rv = BytesUtil.byteMerger(rv, ascii);
+        char[] tabs = new char[116];
+        for(int i = 0; i < 116; i++){
+            tabs[i] = (char) (0x2500 + i);
+        }
+        String test = new String(tabs);
+        try {
+            rv = BytesUtil.byteMerger(rv, test.getBytes("gb18030"));
+            rv = BytesUtil.byteMerger(rv, new byte[]{0x0A});
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        if(baseApp.isAidl()){
+            AidlUtil.getInstance().sendRawData(rv);
+        }else{
+            BluetoothUtil.sendData(rv);
+        }
+
     }
 }
