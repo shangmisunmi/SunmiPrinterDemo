@@ -115,7 +115,7 @@ public class ESCUtil {
 	 * 打印一维条形码
 	 */
 	public static byte[] getPrintBarCode(String data, int symbology, int height, int width, int textposition){
-		if(symbology < 0 || symbology > 8){
+		if(symbology < 0 || symbology > 10){
 			return new byte[]{LF};
 		}
 
@@ -136,10 +136,16 @@ public class ESCUtil {
 			buffer.write(new byte[]{0x1D,0x66,0x01,0x1D,0x48,(byte)textposition,
 					0x1D,0x77,(byte)width,0x1D,0x68,(byte)height,0x0A});
 
-			byte[] barcode = data.getBytes("GB18030");
+			byte[] barcode;
+			if(symbology == 10){
+				barcode = BytesUtil.getBytesFromDecString(data);
+			}else{
+				barcode = data.getBytes("GB18030");
+			}
 
-			if(symbology == 8){
-				buffer.write(new byte[]{0x1D,0x6B,0x49,(byte)(barcode.length+2),0x7B,0x42});
+
+			if(symbology > 7){
+				buffer.write(new byte[]{0x1D,0x6B,0x49,(byte)(barcode.length+2),0x7B, (byte) (0x41+symbology-8)});
 			}else{
 				buffer.write(new byte[]{0x1D,0x6B,(byte)(symbology + 0x41),(byte)barcode.length});
 			}
