@@ -22,8 +22,8 @@ android {
         applicationId "com.test.printertestdemov1s"
         minSdkVersion 21
         targetSdkVersion 23
-        versionCode 7
-        versionName "v2.7.0"
+        versionCode 8
+        versionName "v2.7.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
