@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/arrow"
             android:gravity="right|center_vertical"
-            android:text="CODE128"
+            android:text="CODE128A"
             android:textColor="@color/gray"
             android:textSize="14sp"/>
     </LinearLayout>

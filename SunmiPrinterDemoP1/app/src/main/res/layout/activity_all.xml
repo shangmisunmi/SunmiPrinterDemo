@@ -15,7 +15,7 @@
         android:background="@color/text"
         android:gravity="center"
         android:padding="10dp"
-        android:text="打印小票样张"
+        android:text="Sample"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:onClick="onPrint"/>
