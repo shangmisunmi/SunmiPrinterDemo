@@ -1,0 +1,10 @@
+<resources>　
+    <string-array name="align">
+        　　
+        <item>@string/align_left</item>
+        　　
+        <item>@string/align_mid</item>
+        　　
+        <item>@string/align_right</item>
+    </string-array>
+</resources>
