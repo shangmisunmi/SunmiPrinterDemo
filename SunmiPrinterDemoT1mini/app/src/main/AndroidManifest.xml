@@ -39,8 +39,6 @@
                   android:parentActivityName=".activity.FunctionActivity"/>
         <activity android:name=".activity.AllActivity"
                   android:parentActivityName=".activity.FunctionActivity"/>
-        <activity android:name=".activity.BlackLabelActivity"
-                  android:parentActivityName=".activity.FunctionActivity"/>
     </application>
 
 </manifest>

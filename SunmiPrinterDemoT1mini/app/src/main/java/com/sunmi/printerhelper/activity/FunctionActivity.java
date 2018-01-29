@@ -50,8 +50,6 @@ public class FunctionActivity extends AppCompatActivity {
                     null),
             new DemoDetails(R.string.function_threeline, R.drawable.function_threeline,
                     null),
-            new DemoDetails(R.string.function_blackline, R.drawable.function_blackline,
-                    BlackLabelActivity.class),
     };
 
     private RecyclerView mRecyclerView;
