@@ -97,6 +97,7 @@
     <string name="toast_7">AIDL 暂时只打印单个二维码</string>
     <string name="toast_8">两个二维码尺寸最大为7</string>
     <string name="toast_9">请设置打印机为黑标模式!</string>
+    <string name="toast_10">条码类型或内容不正确!</string>
     <string name="input_order">请输入指令:</string>
     <string name="multithread">多线程并发打印</string>
     <string name="multithread_stop">点击停止</string>

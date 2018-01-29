@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sunmi.printerhelper.R;
 import com.sunmi.printerhelper.utils.AidlUtil;
@@ -134,6 +135,8 @@ public class BarCodeActivity extends BaseActivity {
         Bitmap bitmap = BitmapUtil.generateBitmap(text, symbology, 700, 400);
         if (bitmap != null) {
             mImageView.setImageDrawable(new BitmapDrawable(bitmap));
+        } else{
+            Toast.makeText(this, R.string.toast_10, Toast.LENGTH_LONG).show();
         }
 
         int height = Integer.parseInt(mTextView5.getText().toString());

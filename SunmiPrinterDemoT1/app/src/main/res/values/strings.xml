@@ -92,6 +92,7 @@
     <string name="toast_7"> Only a single Qr code is printed for the AIDL mode</string>
     <string name="toast_8">Now QrCode size must be less than 7!</string>
     <string name="toast_9">Please set the printer as black label mode!</string>
+    <string name="toast_10">BarCode type or conent error!</string>
     <string name="input_order">input epson command:</string>
     <string name="multithread">multithread</string>
     <string name="multithread_stop">stop</string>
