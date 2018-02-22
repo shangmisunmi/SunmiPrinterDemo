@@ -9,8 +9,8 @@ Demo for Eclipse:https://github.com/shangmisunmi/SunmiPrinterDemo-Eclipse-/tree/
 
 Instruction
 ----------
-* Project contains four demos, and be careful to use them in accordance with the corresponding machine model
-* The main difference among them is the aidl files, you can find them from : http://ota.cdn.sunmi.com/DOC/resource/re_cn/AIDL.rar
+* Project contains five demos, and be careful to use them in accordance with the corresponding machine model
+* The main difference among them is the aidl files, you can find them at : http://ota.cdn.sunmi.com/DOC/resource/re_cn/AIDL.rar
 * How to import?
     
     Convert to project in the Android Studio, and build  a Aidl folder under the "src/main" file
