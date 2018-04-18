@@ -9,7 +9,11 @@ Demo for Eclipse:https://github.com/shangmisunmi/SunmiPrinterDemo-Eclipse-/tree/
 
 Instruction
 ----------
-* Project contains five demos, and be careful to use them in accordance with the corresponding machine model
+* Project is updated and contains four demos, and be careful to use them in accordance with the corresponding machine model
+* If you use a old V1 machine， you can refer to the demo of SunmiPrinterDemoV1.  
+  If you use a P series (such as P1、P14g) or V1s machine， you can refer to the demo of SunmiPrinterDemoP&V1s.  
+  If you use a mini series(such as T1mini) machine， you can refer to the demo of SunmiPrinterDemoMini.  
+  If you use a T or S series (such as T1、T2、S2) machine， you can refer to the demo of SunmiPrinterDemoT&S.
 * The main difference among them is the aidl files, you can find them at : http://ota.cdn.sunmi.com/DOC/resource/re_cn/AIDL.rar
 * How to import?
     
