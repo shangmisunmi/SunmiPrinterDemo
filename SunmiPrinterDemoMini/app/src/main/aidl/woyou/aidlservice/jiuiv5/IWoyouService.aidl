@@ -1,13 +1,14 @@
 /**
-* JIUI V1 打印服务
+* JIUI T1mini 打印服务
 * AIDL Version: 2.1
 */
 
 package woyou.aidlservice.jiuiv5;
 
 import woyou.aidlservice.jiuiv5.ICallback;
+import woyou.aidlservice.jiuiv5.ILcdCallback;
 import android.graphics.Bitmap;
-import com.sunmi.trans.TransBean;
+import woyou.aidlservice.jiuiv5.ITax;
 
 interface IWoyouService
 {
@@ -63,7 +64,7 @@ interface IWoyouService
 	/**
 	* 获取打印头打印长度
 	*/
-	void getPrintedLength(in ICallback callback);
+	int getPrintedLength();
 
 	/**
 	 * 打印机走纸(强制换行，结束之前的打印内容后走纸n行)
@@ -168,21 +169,34 @@ interface IWoyouService
 	* 打印文字，文字宽度满一行自动换行排版，不满一整行不打印除非强制换行
 	* 文字按矢量文字宽度原样输出，即每个字符不等宽
 	* @param text:	要打印的文字字符串
-	*
+	* Ver 1.7.6中增加
 	*/
 	void printOriginalText(String text, in ICallback callback);
-
-	/**
-	* lib包事务打印专用接口
-	* transbean		打印任务列表
-	* Ver 1.8.0中增加
-	*/
-	void commitPrint(in TransBean[] transbean, in ICallback callback);
 
 	/**
 	* 打印缓冲区内容
 	*/
 	void commitPrinterBuffer();
+
+	/**
+	*切纸
+	*/
+	void cutPaper(in ICallback callback);
+
+	/**
+	* 获取切刀次数
+	*/
+	int getCutPaperTimes();
+
+	/**
+	* 打开钱柜
+	*/
+	void openDrawer(in ICallback callback);
+
+	/**
+	* 取钱柜累计打开次数
+	*/
+	int getOpenDrawerTimes();
 
 	/**
 	* 进入缓冲模式，所有打印调用将缓存，调用commitPrinterBuffe()后打印
@@ -200,6 +214,14 @@ interface IWoyouService
 	*/
 	void exitPrinterBuffer(in boolean commit);
 
+	void tax(in byte [] data,in ITax callback);
+
+	//获取当前打印机模式：0 普通模式 1黑标模式
+	int getPrinterMode();
+
+	//获取黑标模式打印机自动走纸距离
+	int getPrinterBBMDistance();
+
 	/**
 	* 打印表格的一行，可以指定列宽、对齐方式
 	* @param colsTextArr   各列文本字符串数组
@@ -210,9 +232,59 @@ interface IWoyouService
 	void printColumnsString(in String[] colsTextArr, in int[] colsWidthArr, in int[] colsAlign, in ICallback callback);
 
 	/**
-	* 打印图片
-	* @param bitmap: 	图片bitmap对象(最大宽度384像素，图片超过1M无法打印)
-	* @param type:      目前有两种打印方式：0、同printBitmap 1、阈值200的黑白化图片 2、灰度图片
+	* 获取打印机的最新状态
+	* 返回值：1 打印机正常 2、打印机更新状态 3 获取状态异常  4 缺纸 5 过热  6 开盖 7切刀异常 8切刀恢复 505未检测到打印机
+	**/
+	int updatePrinterState();
+
+	/*
+	* @param flag 1 初始化 2 唤醒LCD 3休眠LCD 4清屏
 	*/
-	void printBitmapCustom(in Bitmap bitmap, in int type, in ICallback callback);
+	void sendLCDCommand(in int flag);
+
+	void sendLCDString(in String string, ILcdCallback callback);
+
+	void sendLCDBitmap(in Bitmap bitmap, ILcdCallback callback);
+
+		/**
+    	* 带反馈打印缓冲区内容
+    	*
+    	* @param callback: 反馈
+    	*
+    	*/
+    	void commitPrinterBufferWithCallback(in ICallback callback);
+
+    	/**
+    	* 带反馈退出缓冲打印模式
+    	*
+    	* @param commit： 是否提交缓冲区内容
+    	* @param callback: 反馈
+    	*
+    	*/
+    	void exitPrinterBufferWithCallback(in boolean commit, in ICallback callback);
+
+        /**
+        * 搭配大小的字符串输出到LCD上
+        *
+        * @param string: 显示在LCD的字符串内容，每个字符串数组将搭配指定的位置大小显示
+        * @param size:  0:invaild
+        *               1:4(1-4)
+        *               2:3(1-3)
+        *               3:3(2-4)
+        *               4:2(1-2)
+        *               5:2(2-3)
+        *               6:2(3-4)
+        *               7:1(1)
+        *               8:2(2)
+        *               9:3(3)
+        *               10:4(4)
+        */
+    	void sendLCDDoubleString(in String topText, in String bottomText, ILcdCallback callback);
+
+        /**
+        * 打印图片
+        * @param bitmap: 	图片bitmap对象(最大宽度384像素，图片超过1M无法打印)
+        * @param type:      目前有两种打印方式：0、同printBitmap 1、阈值200的黑白化图片 2、灰度图片
+        */
+        void printBitmapCustom(in Bitmap bitmap, in int type, in ICallback callback);
 }
