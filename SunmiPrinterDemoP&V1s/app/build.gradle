@@ -16,12 +16,11 @@ android {
         }
     }
 
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 26
     defaultConfig {
         applicationId "com.test.printertestdemop1"
         minSdkVersion 21
-        targetSdkVersion 23
+        targetSdkVersion 26
         versionCode 9
         versionName "v2.7.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -38,20 +37,19 @@ android {
         }
     }
 
-    android.applicationVariants.all {
-        variant ->
-            variant.outputs.each {
-                output -> output.outputFile = new File(output.outputFile.parent, "PrinterDemo_" + defaultConfig.versionName + "_P1.apk");
-            }
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${variant.name}-${variant.versionName}.apk"
+        }
     }
 
 
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    compile 'com.android.support:recyclerview-v7:23.3.0'
-    compile 'com.sunmi:sunmiui:latest.release'
-    compile files('libs/core-3.3.0.jar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.0.0'
+    implementation 'com.android.support:recyclerview-v7:26.0.0'
+    implementation 'com.sunmi:sunmiui:latest.release'
+    implementation files('libs/core-3.3.0.jar')
 }
