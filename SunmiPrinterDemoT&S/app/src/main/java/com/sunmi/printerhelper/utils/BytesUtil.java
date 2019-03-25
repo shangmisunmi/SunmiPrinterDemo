@@ -228,7 +228,7 @@ public class BytesUtil {
 				int green = (clr & 0x0000ff00) >> 8;
 				int blue = clr & 0x000000ff;
 				byte gray = (RGB2Gray(red, green, blue));
-				rv[(width * i + j) / 8 + 4] = (byte) (rv[(width * i + j) / 8 + 4] | (gray << (7 - ((width * i + j) % 8))));
+				rv[bw*i + j/8 + 4] = (byte) (rv[bw*i + j/8 + 4] | (gray << (7 - j % 8)));
 			}
 		}
 
