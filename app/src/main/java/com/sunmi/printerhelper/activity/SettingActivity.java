@@ -2,6 +2,7 @@ package com.sunmi.printerhelper.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -16,8 +17,8 @@ import sunmi.sunmiui.dialog.DialogCreater;
 import sunmi.sunmiui.dialog.ListDialog;
 
 /**
- *  Configure printer control via Bluetooth or API
- *  And showing the device info
+ * Settings
+ * @author kaltin
  */
 public class SettingActivity extends BaseActivity implements View.OnClickListener{
 

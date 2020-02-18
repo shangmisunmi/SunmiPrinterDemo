@@ -3,7 +3,6 @@ package com.sunmi.printerhelper.utils;
 import android.graphics.Bitmap;
 
 import java.io.ByteArrayOutputStream;
-import java.io.UnsupportedEncodingException;
 
 //常用指令封装
 public class ESCUtil {

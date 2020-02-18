@@ -29,7 +29,7 @@ import sunmi.sunmiui.dialog.TextHintDialog;
 
 /**
  *  Print function display page
- * @author kaltin
+ *  @author kaltin
  */
 public class FunctionActivity extends AppCompatActivity {
     HintOneBtnDialog mHintOneBtnDialog;
@@ -54,6 +54,8 @@ public class FunctionActivity extends AppCompatActivity {
                     null),
             new DemoDetails(R.string.function_buffer, R.drawable.function_buffer,
                     BufferActivity.class),
+            new DemoDetails(R.string.function_cash, R.drawable.function_cash,
+                    null),
     };
 
     @Override
@@ -110,6 +112,9 @@ public class FunctionActivity extends AppCompatActivity {
                         }
                         if(demoDetails.titleId == R.string.function_threeline){
                             SunmiPrintHelper.getInstance().print3Line();
+                        }
+                        if(demoDetails.titleId == R.string.function_cash){
+                            SunmiPrintHelper.getInstance().openCashBox();
                         }
                         if(demoDetails.titleId == R.string.function_multi){
                             if(mHintOneBtnDialog  == null){

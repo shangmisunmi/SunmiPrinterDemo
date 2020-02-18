@@ -12,6 +12,7 @@
     <string name="function_threeline">空打三行</string>
     <string name="function_buffer">事务打印</string>
     <string name="function_blackline">黑标打印</string>
+    <string name="function_cash">钱箱测试</string>
 
     <!--titles-->
     <string name="setting_title">设置</string>

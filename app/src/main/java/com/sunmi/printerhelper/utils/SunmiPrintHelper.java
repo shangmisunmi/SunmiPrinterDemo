@@ -36,7 +36,7 @@ public class SunmiPrintHelper {
      */
     public int sunmiPrinter = CheckSunmiPrinter;
     /**
-     *  Sunmi Printer API
+     *  SunmiPrinterService for API
      */
     private SunmiPrinterService sunmiPrinterService;
 
@@ -84,6 +84,8 @@ public class SunmiPrintHelper {
         try {
             if(sunmiPrinterService != null){
                 InnerPrinterManager.getInstance().unBindService(context, innerPrinterCallback);
+                sunmiPrinterService = null;
+                sunmiPrinter = LostSunmiPrinter;
             }
         } catch (InnerPrinterException e) {
             e.printStackTrace();
@@ -437,6 +439,12 @@ public class SunmiPrintHelper {
         }
     }
 
+    /**
+     *  Transaction printing:
+     *  enter->print->exit(get result) or
+     *  enter->first print->commit(get result)->twice print->commit(get result)->exit(don't care
+     *  result)
+     */
     public void printTrans(Context context, InnerResultCallbcak callbcak){
         if(sunmiPrinterService == null){
             //TODO Service disconnection processing
@@ -451,6 +459,27 @@ public class SunmiPrintHelper {
             e.printStackTrace();
         }
     }
+
+    /**
+     *  Open cash box
+     *  This method can be used on Sunmi devices with a cash drawer interface
+     *  If there is no cash box (such as V1、P1) or the call fails, an exception will be thrown
+     *
+     *  Reference to https://docs.sunmi.com/general-function-modules/external-device-debug/cash-box-driver/}
+     */
+    public void openCashBox(){
+        if(sunmiPrinterService == null){
+            //TODO Service disconnection processing
+            return;
+        }
+
+        try {
+            sunmiPrinterService.openDrawer(null);
+        } catch (RemoteException e) {
+            handleRemoteException(e);
+        }
+    }
+
 
     /**
      *  Sample print receipt

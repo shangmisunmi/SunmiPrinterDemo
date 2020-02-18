@@ -12,6 +12,7 @@
     <string name="function_threeline">Paper Feed</string>
     <string name="function_buffer">Transaction Print</string>
     <string name="function_blackline">Black Label</string>
+    <string name="function_cash">Cash Test</string>
 
     <!--titles-->
     <string name="setting_title">Setting</string>
