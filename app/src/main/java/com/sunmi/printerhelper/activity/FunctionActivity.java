@@ -56,6 +56,8 @@ public class FunctionActivity extends AppCompatActivity {
                     BufferActivity.class),
             new DemoDetails(R.string.function_cash, R.drawable.function_cash,
                     null),
+            new DemoDetails(R.string.function_lcd, R.drawable.function_lcd,
+                    LcdActivity.class),
     };
 
     @Override
@@ -241,7 +243,7 @@ public class FunctionActivity extends AppCompatActivity {
         private final int iconResID;
         private final Class<? extends Activity> activityClass;
 
-        public DemoDetails(@StringRes int titleId, @DrawableRes int descriptionId,
+        private DemoDetails(@StringRes int titleId, @DrawableRes int descriptionId,
                            Class<? extends Activity> activityClass) {
             super();
             this.titleId = titleId;

@@ -13,6 +13,7 @@
     <string name="function_buffer">事务打印</string>
     <string name="function_blackline">黑标打印</string>
     <string name="function_cash">钱箱测试</string>
+    <string name="function_lcd">客显测试</string>
 
     <!--titles-->
     <string name="setting_title">设置</string>
@@ -25,6 +26,7 @@
     <string name="all_title">综合测试</string>
     <string name="buffer_title">事务打印测试</string>
     <string name="blackline_title">黑标打印测试</string>
+    <string name="lcd_title">客显测试</string>
 
     <!--text-->
     <string name="printer_serial_num">打印机序列号</string>
@@ -109,6 +111,9 @@
     <string name="bl_set">黑标设置</string>
     <string name="bl_check">黑标检测</string>
     <string name="bl_sample">黑标小票样张</string>
+    <string name="display_text">显示一行文本</string>
+    <string name="display_texts">显示多行文本</string>
+    <string name="display_pic">显示图片</string>
 
     <!--instruction-->
     <string name="toast_1">事务打印请使用API模式!</string>

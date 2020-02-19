@@ -5,7 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.RemoteException;
 
+
 import com.sunmi.peripheral.printer.ExceptionConst;
+import com.sunmi.peripheral.printer.InnerLcdCallback;
 import com.sunmi.peripheral.printer.InnerPrinterCallback;
 import com.sunmi.peripheral.printer.InnerPrinterException;
 import com.sunmi.peripheral.printer.InnerPrinterManager;
@@ -110,6 +112,7 @@ public class SunmiPrintHelper {
      *  Some conditions can cause interface calls to fail
      *  For example: the version is too low、device does not support
      *  You can see {@link ExceptionConst}
+     *  So you have to handle these exceptions
      */
     private void handleRemoteException(RemoteException e){
         //TODO process when get one exception
@@ -480,6 +483,95 @@ public class SunmiPrintHelper {
         }
     }
 
+    /**
+     * LCD screen control
+     * @param flag 1 —— Initialization
+     *             2 —— Light up screen
+     *             3 —— Extinguish screen
+     *             4 —— Clear screen contents
+     */
+    public void controlLcd(int flag){
+        if(sunmiPrinterService == null){
+            //TODO Service disconnection processing
+            return;
+        }
+
+        try {
+            sunmiPrinterService.sendLCDCommand(flag);
+        } catch (RemoteException e) {
+            handleRemoteException(e);
+        }
+    }
+
+    /**
+     * Display text SUNMI,font size is 16 and format is fill
+     * sendLCDFillString(txt, size, fill, callback)
+     * Since the screen pixel height is 40, the font should not exceed 40
+     */
+    public void sendTextToLcd(){
+        if(sunmiPrinterService == null){
+            //TODO Service disconnection processing
+            return;
+        }
+
+        try {
+            sunmiPrinterService.sendLCDFillString("SUNMI", 16, true, new InnerLcdCallback() {
+                @Override
+                public void onRunResult(boolean show) throws RemoteException {
+                    //TODO handle result
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Display two lines and one empty line in the middle
+     */
+    public void sendTextsToLcd(){
+        if(sunmiPrinterService == null){
+            //TODO Service disconnection processing
+            return;
+        }
+
+        try {
+            String[] texts = {"SUNMI", null, "SUNMI"};
+            int[] align = {2, 1, 2};
+            sunmiPrinterService.sendLCDMultiString(texts, align, new InnerLcdCallback() {
+                @Override
+                public void onRunResult(boolean show) throws RemoteException {
+                    //TODO handle result
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Display one 128x40 pixels and opaque picture
+     */
+    public void sendPicToLcd(Bitmap pic){
+        if(sunmiPrinterService == null){
+            //TODO Service disconnection processing
+            return;
+        }
+
+        try {
+            sunmiPrinterService.sendLCDBitmap(pic, new InnerLcdCallback() {
+                @Override
+                public void onRunResult(boolean show) throws RemoteException {
+                    //TODO handle result
+                }
+            });
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     /**
      *  Sample print receipt
