@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import com.sunmi.printerhelper.R;
 import com.sunmi.printerhelper.utils.SunmiPrintHelper;
 
+
 /**
  * <pre>
  *      Used to send content to LCD screen when the device is T1mini or T2mini
@@ -45,7 +46,11 @@ public class LcdActivity extends BaseActivity {
 
     public void pic(View view) {
         BitmapFactory.Options options = new BitmapFactory.Options();
+        //No scaling
         options.inScaled = false;
+        //Make the bitmap have the current device's dpi
+        options.inDensity = getResources().getDisplayMetrics().densityDpi;
+
         SunmiPrintHelper.getInstance().sendPicToLcd(BitmapFactory.decodeResource(getResources(),
                 R.drawable.mini, options));
     }
