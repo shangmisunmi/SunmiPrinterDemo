@@ -58,6 +58,8 @@ public class FunctionActivity extends AppCompatActivity {
                     null),
             new DemoDetails(R.string.function_lcd, R.drawable.function_lcd,
                     LcdActivity.class),
+            new DemoDetails(R.string.function_status, R.drawable.function_status,
+                    null)
     };
 
     @Override
@@ -117,6 +119,9 @@ public class FunctionActivity extends AppCompatActivity {
                         }
                         if(demoDetails.titleId == R.string.function_cash){
                             SunmiPrintHelper.getInstance().openCashBox();
+                        }
+                        if(demoDetails.titleId == R.string.function_status){
+                            SunmiPrintHelper.getInstance().showPrinterStatus(FunctionActivity.this);
                         }
                         if(demoDetails.titleId == R.string.function_multi){
                             if(mHintOneBtnDialog  == null){

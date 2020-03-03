@@ -14,6 +14,7 @@
     <string name="function_blackline">黑标打印</string>
     <string name="function_cash">钱箱测试</string>
     <string name="function_lcd">客显测试</string>
+    <string name="function_status">打印机状态</string>
 
     <!--titles-->
     <string name="setting_title">设置</string>

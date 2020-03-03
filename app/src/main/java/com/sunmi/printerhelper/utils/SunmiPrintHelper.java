@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.RemoteException;
+import android.widget.Toast;
 
 
 import com.sunmi.peripheral.printer.ExceptionConst;
@@ -654,6 +655,58 @@ public class SunmiPrintHelper {
          } catch (RemoteException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Used to report the real-time query status of the printer, which can be used before each
+     * printing
+     */
+    public void showPrinterStatus(Context context){
+        if(sunmiPrinterService == null){
+            //TODO Service disconnection processing
+            return ;
+        }
+        String result = "Interface is too low to implement interface";
+        try {
+            int res = sunmiPrinterService.updatePrinterState();
+            switch (res){
+                case 1:
+                    result = "printer is running";
+                    break;
+                case 2:
+                    result = "printer found but still initializing";
+                    break;
+                case 3:
+                    result = "printer hardware interface is abnormal and needs to be reprinted";
+                    break;
+                case 4:
+                    result = "printer is out of paper";
+                    break;
+                case 5:
+                    result = "printer is overheating";
+                    break;
+                case 6:
+                    result = "printer's cover is not closed";
+                    break;
+                case 7:
+                    result = "printer's cutter is abnormal";
+                    break;
+                case 8:
+                    result = "printer's cutter is normal";
+                    break;
+                case 9:
+                    result = "not found black mark paper";
+                    break;
+                case 505:
+                    result = "printer does not exist";
+                    break;
+                default:
+                    break;
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
     }
 
 }

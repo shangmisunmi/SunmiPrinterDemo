@@ -14,6 +14,7 @@
     <string name="function_blackline">Black Label</string>
     <string name="function_cash">Cash Test</string>
     <string name="function_lcd">Lcd Test</string>
+    <string name="function_status">Status</string>
 
     <!--titles-->
     <string name="setting_title">Setting</string>
