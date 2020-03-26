@@ -210,6 +210,17 @@ public class ESCUtil {
         return result;
     }
 
+    // ------------------------style set-----------------------------
+	//设置默认行间距
+	public static byte[] setDefaultLineSpace(){
+		return new byte[]{0x1B, 0x32};
+	}
+
+	//设置行间距
+	public static byte[] setLineSpace(int height){
+    	return new byte[]{0x1B, 0x33, (byte) height};
+	}
+
 	// ------------------------underline-----------------------------
 	//设置下划线1点
 	public static byte[] underlineWithOneDotWidthOn() {
