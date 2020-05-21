@@ -49,6 +49,8 @@
             android:parentActivityName=".activity.FunctionActivity"/>
         <activity android:name=".activity.LcdActivity"
             android:parentActivityName=".activity.FunctionActivity"/>
+        <activity android:name=".activity.LabelActivity"
+            android:parentActivityName=".activity.FunctionActivity"/>
     </application>
 
 </manifest>

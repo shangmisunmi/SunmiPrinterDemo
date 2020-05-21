@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="20dp"
+    android:background="@color/background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/label_info"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/label_info2"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:gravity="center"
+        android:padding="10dp"
+        android:onClick="testOne"
+        android:text="@string/label_print_one"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:gravity="center"
+        android:padding="10dp"
+        android:onClick="testMore"
+        android:text="@string/label_print_more"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+</LinearLayout>

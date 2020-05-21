@@ -15,6 +15,7 @@
     <string name="function_cash">Cash Test</string>
     <string name="function_lcd">Lcd Test</string>
     <string name="function_status">Status</string>
+    <string name="function_label">Label Test</string>
 
     <!--titles-->
     <string name="setting_title">Setting</string>
@@ -28,6 +29,7 @@
     <string name="buffer_title">Transaction Test</string>
     <string name="blackline_title">Black Label Test</string>
     <string name="lcd_title">Lcd Test</string>
+    <string name="label_title">Label Test</string>
 
     <!--text-->
     <string name="printer_serial_num">serial number</string>
@@ -115,6 +117,13 @@
     <string name="display_text">display a line</string>
     <string name="display_texts">display lines</string>
     <string name="display_pic">display picture</string>
+    <string name="label_print_one">print one label</string>
+    <string name="label_print_more">print multi label</string>
+    <string name="label_info">Sunmi label printing function now only supports handheld V2 and v2pro
+        devices. Please consult the supplier before use！</string>
+    <string name="label_info2">Usage: different from the standard label instruction, Sunmi label
+        printing needs to adapt the printing content and locate the label printing position through the positioning interface</string>
+
 
     <!--instruction-->
     <string name="toast_1">Transaction print,use the AIDL mode!</string>
@@ -127,6 +136,9 @@
     <string name="toast_8">Now QrCode size must be less than 7!</string>
     <string name="toast_9">BarCode type or conent error!</string>
     <string name="toast_10">Please set the printer as black label mode!</string>
+    <string name="toast_11">Settings->System->Advanced->InnerPrinter-> set black mark
+        function</string>
+    <string name="toast_12">Please set the printer to label mode!</string>
 
     <!--about content-->
     <string name="about_content">PrinterHelper is suitable for the sunmi series. \nPrinterHelper integrate two connection type: AIDL and BLUETOOTH. It also provide a series of printing testing module, which help the developer to connect with the sunmi printing function faster. \n upload the information that need to be printed, which allows sunmi to better locate the issues. \n official site: http://www.sunmi.com. \n developer documentation: http://docs.sunmi.com</string>

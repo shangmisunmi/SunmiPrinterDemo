@@ -15,6 +15,8 @@
     <string name="function_cash">钱箱测试</string>
     <string name="function_lcd">客显测试</string>
     <string name="function_status">打印机状态</string>
+    <string name="function_label">标签打印</string>
+
 
     <!--titles-->
     <string name="setting_title">设置</string>
@@ -28,6 +30,7 @@
     <string name="buffer_title">事务打印测试</string>
     <string name="blackline_title">黑标打印测试</string>
     <string name="lcd_title">客显测试</string>
+    <string name="label_title">标签打印测试</string>
 
     <!--text-->
     <string name="printer_serial_num">打印机序列号</string>
@@ -115,6 +118,11 @@
     <string name="display_text">显示一行文本</string>
     <string name="display_texts">显示多行文本</string>
     <string name="display_pic">显示图片</string>
+    <string name="label_print_one">打印一张标签</string>
+    <string name="label_print_more">打印多张标签</string>
+    <string name="label_info">商米标签打印功能现在只支持手持V2、V2pro设备，使用前请咨询供应商！</string>
+    <string name="label_info2">使用方法：首次放入标签纸，先切换标签模式，学习标签纸，然后测试打印（设置->内置打印->打印模式选择->选择标签热敏->标签学习）
+    </string>
 
     <!--instruction-->
     <string name="toast_1">事务打印请使用API模式!</string>
@@ -127,6 +135,8 @@
     <string name="toast_8">两个二维码尺寸最大为7</string>
     <string name="toast_9">条码类型或内容不正确!</string>
     <string name="toast_10">请设置打印机为黑标模式!</string>
+    <string name="toast_11">设置->系统->高级->内置打印->设置黑标功能</string>
+    <string name="toast_12">请设置打印机为标签模式!</string>
 
     <!--about content-->
     <string

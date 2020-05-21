@@ -59,7 +59,11 @@ public class FunctionActivity extends AppCompatActivity {
             new DemoDetails(R.string.function_lcd, R.drawable.function_lcd,
                     LcdActivity.class),
             new DemoDetails(R.string.function_status, R.drawable.function_status,
-                    null)
+                    null),
+            new DemoDetails(R.string.function_blackline, R.drawable.function_blackline,
+                    BlackLabelActivity.class),
+            new DemoDetails(R.string.function_label, R.drawable.function_label,
+                    LabelActivity.class)
     };
 
     @Override

@@ -40,7 +40,7 @@ public class PrinterInfoActivity extends BaseActivity{
         ((TextView)findViewById(R.id.info2)).setText(SunmiPrintHelper.getInstance().getDeviceModel());
         ((TextView)findViewById(R.id.info3)).setText(SunmiPrintHelper.getInstance().getPrinterVersion());
         ((TextView)findViewById(R.id.info4)).setText(SunmiPrintHelper.getInstance().getPrinterPaper());
-        ((TextView)findViewById(R.id.info5)).setText(SunmiPrintHelper.getInstance().getPrinterDistance(new InnerResultCallbcak() {
+        SunmiPrintHelper.getInstance().getPrinterDistance(new InnerResultCallbcak() {
             @Override
             public void onRunResult(boolean isSuccess) throws RemoteException {
 
@@ -60,7 +60,7 @@ public class PrinterInfoActivity extends BaseActivity{
             public void onPrintResult(int code, String msg) throws RemoteException {
 
             }
-        }));
+        });
         SunmiPrintHelper.getInstance().getPrinterHead(new InnerResultCallbcak() {
             @Override
             public void onRunResult(boolean isSuccess) throws RemoteException {
