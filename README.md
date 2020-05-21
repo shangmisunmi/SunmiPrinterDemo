@@ -34,6 +34,8 @@ Bluetooth only plays table graphics
 * BitmapActivity——Demo call api to print image,picture
 * BufferActivity——Demo call api to print 
 a simple small ticket content, and You can get the print result via transaction mode
+* BlackLabelActivity——Demo call api to print on black label paper
+* LabelActivity——Demo call api to print on "label paper"
 
 ## InnerPrinter Ble
 Each function module can be used via Bluetooth, 
