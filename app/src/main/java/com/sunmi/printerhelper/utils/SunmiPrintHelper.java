@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.RemoteException;
-import android.util.Base64;
 import android.widget.Toast;
 
 
@@ -13,14 +12,10 @@ import com.sunmi.peripheral.printer.InnerLcdCallback;
 import com.sunmi.peripheral.printer.InnerPrinterCallback;
 import com.sunmi.peripheral.printer.InnerPrinterException;
 import com.sunmi.peripheral.printer.InnerPrinterManager;
-import com.sunmi.peripheral.printer.InnerResultCallbcak;
+import com.sunmi.peripheral.printer.InnerResultCallback;
 import com.sunmi.peripheral.printer.SunmiPrinterService;
 import com.sunmi.peripheral.printer.WoyouConsts;
 import com.sunmi.printerhelper.R;
-
-import java.nio.charset.StandardCharsets;
-
-import sunmi.sunmiui.utils.LogUtil;
 
 /**
  * <pre>
@@ -254,7 +249,7 @@ public class SunmiPrintHelper {
     /**
      * Get paper specifications
      */
-    public void getPrinterHead(InnerResultCallbcak callbcak){
+    public void getPrinterHead(InnerResultCallback callbcak){
         if(sunmiPrinterService == null){
             //TODO Service disconnection processing
             return;
@@ -270,7 +265,7 @@ public class SunmiPrintHelper {
      * Get printing distance since boot
      * Get printing distance through interface callback since 1.0.8(printerlibrary)
      */
-    public void getPrinterDistance(InnerResultCallbcak callback){
+    public void getPrinterDistance(InnerResultCallback callback){
         if(sunmiPrinterService == null){
             //TODO Service disconnection processing
             return;
@@ -468,7 +463,7 @@ public class SunmiPrintHelper {
      *  enter->first print->commit(get result)->twice print->commit(get result)->exit(don't care
      *  result)
      */
-    public void printTrans(Context context, InnerResultCallbcak callbcak){
+    public void printTrans(Context context, InnerResultCallback callbcak){
         if(sunmiPrinterService == null){
             //TODO Service disconnection processing
             return;

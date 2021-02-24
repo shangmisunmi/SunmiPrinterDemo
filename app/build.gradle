@@ -29,6 +29,6 @@ dependencies {
     implementation 'com.sunmi:sunmiui:1.1.27'
     //zxing to generate barcode
     implementation files('libs/core-3.3.0.jar')
-    implementation 'com.sunmi:printerlibrary:1.0.8'
+    implementation 'com.sunmi:printerlibrary:1.0.13'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }

@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.sunmi.peripheral.printer.InnerResultCallbcak;
+import com.sunmi.peripheral.printer.InnerResultCallback;
 import com.sunmi.printerhelper.BuildConfig;
 import com.sunmi.printerhelper.R;
 import com.sunmi.printerhelper.utils.SunmiPrintHelper;
@@ -40,7 +40,7 @@ public class PrinterInfoActivity extends BaseActivity{
         ((TextView)findViewById(R.id.info2)).setText(SunmiPrintHelper.getInstance().getDeviceModel());
         ((TextView)findViewById(R.id.info3)).setText(SunmiPrintHelper.getInstance().getPrinterVersion());
         ((TextView)findViewById(R.id.info4)).setText(SunmiPrintHelper.getInstance().getPrinterPaper());
-        SunmiPrintHelper.getInstance().getPrinterDistance(new InnerResultCallbcak() {
+        SunmiPrintHelper.getInstance().getPrinterDistance(new InnerResultCallback() {
             @Override
             public void onRunResult(boolean isSuccess) throws RemoteException {
 
@@ -61,7 +61,7 @@ public class PrinterInfoActivity extends BaseActivity{
 
             }
         });
-        SunmiPrintHelper.getInstance().getPrinterHead(new InnerResultCallbcak() {
+        SunmiPrintHelper.getInstance().getPrinterHead(new InnerResultCallback() {
             @Override
             public void onRunResult(boolean isSuccess) throws RemoteException {
 

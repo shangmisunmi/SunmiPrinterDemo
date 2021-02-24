@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.sunmi.peripheral.printer.InnerResultCallbcak;
+import com.sunmi.peripheral.printer.InnerResultCallback;
 import com.sunmi.printerhelper.R;
 import com.sunmi.printerhelper.utils.SunmiPrintHelper;
 
@@ -71,7 +71,7 @@ public class BufferActivity extends BaseActivity {
         });
     }
 
-    InnerResultCallbcak mCallback = new InnerResultCallbcak() {
+    InnerResultCallback mCallback = new InnerResultCallback() {
         @Override
         public void onRunResult(boolean isSuccess) throws RemoteException {
 
