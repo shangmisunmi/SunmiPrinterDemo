@@ -137,6 +137,8 @@
     <string name="toast_10">请设置打印机为黑标模式!</string>
     <string name="toast_11">设置->系统->高级->内置打印->设置黑标功能</string>
     <string name="toast_12">请设置打印机为标签模式!</string>
+    <string name="sunmi_font">商米等宽字体</string>
+    <string name="custom_font">自定义字体</string>
 
     <!--about content-->
     <string

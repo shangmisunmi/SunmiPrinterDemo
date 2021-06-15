@@ -18,6 +18,7 @@
         android:showDividers="middle|end|beginning">
 
         <LinearLayout
+            android:id="@+id/text_font"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:gravity="center_vertical"
@@ -31,12 +32,15 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/text_text_font"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableRight="@drawable/arrow"
                 android:gravity="right|center_vertical"
-                android:text="Type monospace"
+                android:text="@string/sunmi_font"
                 android:textColor="@color/gray"
                 android:textSize="14sp"/>
+
         </LinearLayout>
 
         <LinearLayout

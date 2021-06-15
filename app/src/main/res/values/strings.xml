@@ -123,7 +123,8 @@
         devices. Please consult the supplier before use！</string>
     <string name="label_info2">Usage: different from the standard label instruction, Sunmi label
         printing needs to adapt the printing content and locate the label printing position through the positioning interface</string>
-
+    <string name="sunmi_font">Sunmi monospace</string>
+    <string name="custom_font">Custom typeface</string>
 
     <!--instruction-->
     <string name="toast_1">Transaction print,use the AIDL mode!</string>

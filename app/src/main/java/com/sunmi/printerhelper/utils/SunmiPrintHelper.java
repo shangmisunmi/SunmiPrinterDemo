@@ -312,10 +312,15 @@ public class SunmiPrintHelper {
 
     /**
      * print text
-     * setPrinterStyle Api require V4.2.22 or later, So use esc cmd instead when not supported
+     * setPrinterStyle:Api require V4.2.22 or later, So use esc cmd instead when not supported
      *  More settings reference documentation {@link WoyouConsts}
+     * printTextWithFont:
+     *  Custom fonts require V4.14.0 or later!
+     *  You can put the custom font in the 'assets' directory and Specify the font name parameters
+     *  in the Api.
      */
-    public void printText(String content, float size, boolean isBold, boolean isUnderLine) {
+    public void printText(String content, float size, boolean isBold, boolean isUnderLine,
+                          String typeface) {
         if(sunmiPrinterService == null){
             //TODO Service disconnection processing
             return;
@@ -342,7 +347,7 @@ public class SunmiPrintHelper {
                     sunmiPrinterService.sendRAWData(ESCUtil.underlineOff(), null);
                 }
             }
-            sunmiPrinterService.printTextWithFont(content, null, size, null);
+            sunmiPrinterService.printTextWithFont(content, typeface, size, null);
         } catch (RemoteException e) {
             e.printStackTrace();
         }

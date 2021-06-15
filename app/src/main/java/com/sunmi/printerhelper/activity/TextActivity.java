@@ -30,11 +30,13 @@ import sunmi.sunmiui.dialog.ListDialog;
  * Example of printing text
  */
 public class TextActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener {
-    private TextView mTextView1, mTextView2;
+    private TextView mTextView, mTextView1, mTextView2;
     private CheckBox mCheckBox1, mCheckBox2;
     private EditText mEditText;
     private LinearLayout mLayout, mLinearLayout;
     private int record;
+    //Font usage variables
+    private String testFont;
     private boolean isBold, isUnderLine;
 
     private String[] mStrings = new String[]{"CP437", "CP850", "CP860", "CP863", "CP865", "CP857", "CP737", "CP928", "Windows-1252", "CP866", "CP852", "CP858", "CP874", "Windows-775", "CP855", "CP862", "CP864", "GB18030", "BIG5", "KSC5601", "utf-8"};
@@ -46,9 +48,11 @@ public class TextActivity extends BaseActivity implements CompoundButton.OnCheck
         setMyTitle(R.string.text_title);
         setBack();
 
+        testFont = null;
         record = 17;
         isBold = false;
         isUnderLine = false;
+        mTextView = findViewById(R.id.text_text_font);
         mTextView1 = findViewById(R.id.text_text_character);
         mTextView2 = findViewById(R.id.text_text_size);
         mCheckBox1 = findViewById(R.id.text_bold);
@@ -73,6 +77,31 @@ public class TextActivity extends BaseActivity implements CompoundButton.OnCheck
 
         mCheckBox1.setOnCheckedChangeListener(this);
         mCheckBox2.setOnCheckedChangeListener(this);
+
+        findViewById(R.id.text_font).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String[] fontStrings = new String[]{getResources().getString(R.string.sunmi_font),
+                        getResources().getString(R.string.custom_font)};
+                final ListDialog listDialog = DialogCreater.createListDialog(TextActivity.this,
+                        getResources().getString(R.string.type_text),
+                        getResources().getString(R.string.cancel),
+                        fontStrings);
+                listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
+                    @Override
+                    public void OnItemClick(int position) {
+                        mTextView.setText(fontStrings[position]);
+                        if(position > 0){
+                            testFont = "test.ttf";
+                        } else {
+                            testFont = null;
+                        }
+                        listDialog.cancel();
+                    }
+                });
+                listDialog.show();
+            }
+        });
 
 
         findViewById(R.id.text_character).setOnClickListener(new View.OnClickListener() {
@@ -104,7 +133,7 @@ public class TextActivity extends BaseActivity implements CompoundButton.OnCheck
 
         float size = Integer.parseInt(mTextView2.getText().toString());
         if (!BluetoothUtil.isBlueToothPrinter) {
-            SunmiPrintHelper.getInstance().printText(content, size, isBold, isUnderLine);
+            SunmiPrintHelper.getInstance().printText(content, size, isBold, isUnderLine, testFont);
             SunmiPrintHelper.getInstance().feedPaper();
         } else {
             printByBluTooth(content);
