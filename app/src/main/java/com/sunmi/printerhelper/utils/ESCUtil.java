@@ -67,16 +67,17 @@ public class ESCUtil {
 	}
 
 	/**
-	 * 光栅打印二维码
+	 * 使用光栅位图打印两个二维码
+	 * 将多个二维码转换为光栅位图打印
 	 */
-	public static byte[] getPrintQRCode2(String data, int size){
+	public static byte[] getPrintDoubleQRCode(String qr1, String qr2, int size){
 		byte[] bytes1  = new byte[4];
 		bytes1[0] = GS;
 		bytes1[1] = 0x76;
 		bytes1[2] = 0x30;
 		bytes1[3] = 0x00;
 
-		byte[] bytes2 = BytesUtil.getZXingQRCode(data, size);
+		byte[] bytes2 = BytesUtil.getZXingQRCode(qr1, qr2, size);
 		return BytesUtil.byteMerger(bytes1, bytes2);
 	}
 

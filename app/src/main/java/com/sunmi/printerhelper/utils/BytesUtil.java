@@ -147,32 +147,37 @@ public class BytesUtil {
 	}
 
 	/**
-	 * 生成二维码字节流
-	 *
-	 * @param data
-	 * @param size
-	 * @return
+	 * 生成多个二维码字节流
 	 */
-	public static byte[] getZXingQRCode(String data, int size) {
+	public static byte[] getZXingQRCode(String qr1, String qr2, int size) {
 		try {
 			Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
 			hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
 			//图像数据转换，使用了矩阵转换
-			BitMatrix bitMatrix = new QRCodeWriter().encode(data, BarcodeFormat.QR_CODE, size, size, hints);
-			//System.out.println("bitmatrix height:" + bitMatrix.getHeight() + " width:" + bitMatrix.getWidth());
-			return getBytesFromBitMatrix(bitMatrix);
+			BitMatrix bitMatrix1 = new QRCodeWriter().encode(qr1, BarcodeFormat.QR_CODE,
+					size, size, hints);
+			BitMatrix bitMatrix2 = new QRCodeWriter().encode(qr2, BarcodeFormat.QR_CODE,
+					size, size, hints);
+			return getBytesFromBitMatrix(bitMatrix1, bitMatrix2, 40);
 		} catch (WriterException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	public static byte[] getBytesFromBitMatrix(BitMatrix bits) {
-		if (bits == null) return null;
+	/**
+	 * 合并两个矩阵数据
+	 */
+	public static byte[] getBytesFromBitMatrix(BitMatrix bits1, BitMatrix bits2, int space) {
+		if (bits1 == null || bits2 == null) return null;
 
-		int h = bits.getHeight();
-		int w = (bits.getWidth() + 7) / 8;
+		int h1 = bits1.getHeight();
+		int w1 = bits1.getWidth();
+		int h2 = bits2.getHeight();
+		int w2 = bits2.getWidth();
+		int h = Math.max(h1, h2);
+		int w = (w1 + w2 + space + 7)/8;
+
 		byte[] rv = new byte[h * w + 4];
 
 		rv[0] = (byte) w;//xL
@@ -181,11 +186,28 @@ public class BytesUtil {
 		rv[3] = (byte) (h >> 8);
 
 		int k = 4;
+		byte b;
 		for (int i = 0; i < h; i++) {
 			for (int j = 0; j < w; j++) {
 				for (int n = 0; n < 8; n++) {
-					byte b = getBitMatrixColor(bits, j * 8 + n, i);
-					rv[k] += rv[k] + b;
+					int pos = j * 8 + n;
+					if(pos < w1) {
+						if(i < h1) {
+							b = getBitMatrixColor(bits1, pos, i);
+						} else {
+							b = 0;
+						}
+						rv[k] += rv[k] + b;
+					} else if(pos < (w1 + space)) {
+						rv[k] += rv[k];
+					} else {
+						if(i < h2) {
+							b = getBitMatrixColor(bits2, pos - w1 - space, i);
+						} else {
+							b = 0;
+						}
+						rv[k] += rv[k] + b;
+					}
 				}
 				k++;
 			}
