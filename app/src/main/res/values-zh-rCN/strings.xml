@@ -67,7 +67,6 @@
     <string name="barcode_width">条形码宽度</string>
     <string name="content_qrcode">二维码内容</string>
     <string name="input_qrcode">请输入二维码内容</string>
-    <string name="array_qrcode">二维码排列方式</string>
     <string name="size_qrcode">二维码块大小</string>
     <string name="error_qrcode">二维码纠错等级</string>
     <string name="upload_info">上传打印信息</string>

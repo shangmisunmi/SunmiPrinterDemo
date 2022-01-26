@@ -59,37 +59,7 @@ public class ESCUtil {
 			buffer.write(setQRCodeSize(modulesize));
 			buffer.write(setQRCodeErrorLevel(errorlevel));
 			buffer.write(getQCodeBytes(code));
-			buffer.write(getBytesForPrintQRCode(true));
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		return buffer.toByteArray();
-	}
-
-	/**
-	 * 横向两个二维码 sunmi自定义指令
-	 * @param code1:			二维码数据
-	 * @param code2:			二维码数据
-	 * @param modulesize:	二维码块大小(单位:点, 取值 1 至 16 )
-	 * @param errorlevel:	二维码纠错等级(0 至 3)
-	 *                0 -- 纠错级别L ( 7%)
-	 *                1 -- 纠错级别M (15%)
-	 *                2 -- 纠错级别Q (25%)
-	 *                3 -- 纠错级别H (30%)
-	 */
-	public static byte[] getPrintDoubleQRCode(String code1, String code2, int modulesize, int errorlevel){
-		ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-		try{
-			buffer.write(setQRCodeSize(modulesize));
-			buffer.write(setQRCodeErrorLevel(errorlevel));
-			buffer.write(getQCodeBytes(code1));
-			buffer.write(getBytesForPrintQRCode(false));
-			buffer.write(getQCodeBytes(code2));
-
-			//加入横向间隔
-			buffer.write(new byte[]{0x1B, 0x5C, 0x18, 0x00});
-
-			buffer.write(getBytesForPrintQRCode(true));
+			buffer.write(getBytesForPrintQRCode());
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -394,16 +364,9 @@ public class ESCUtil {
 		return dtmp;
 	}
 
-
-	private static byte[] getBytesForPrintQRCode(boolean single){
-		//打印已存入数据的二维码
-		byte[] dtmp;
-		if(single){		//同一行只打印一个QRCode， 后面加换行
-			dtmp = new byte[9];
-			dtmp[8] = 0x0A;
-		}else{
-			dtmp = new byte[8];
-		}
+	//打印已存入数据的二维码
+	private static byte[] getBytesForPrintQRCode(){
+		byte[] dtmp = new byte[9];
 		dtmp[0] = 0x1D;
 		dtmp[1] = 0x28;
 		dtmp[2] = 0x6B;
@@ -412,6 +375,7 @@ public class ESCUtil {
 		dtmp[5] = 0x31;
 		dtmp[6] = 0x51;
 		dtmp[7] = 0x30;
+		dtmp[8] = 0x0A;
 		return dtmp;
 	}
 

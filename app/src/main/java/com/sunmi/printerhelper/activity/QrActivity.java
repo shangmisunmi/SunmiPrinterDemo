@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -22,12 +21,13 @@ import sunmi.sunmiui.dialog.ListDialog;
 
 /**
  *  Example of printing a QR code
+ *  In order to comply with the standard ESC instruction, printing QR code through Bluetooth
+ *  instruction mode does not support side-by-side printing!
  *  @author kaltin
  */
 public class QrActivity extends BaseActivity {
     private ImageView mImageView;
-    private TextView mTextView1, mTextView2, mTextView3, mTextView4, mTextView5;
-    private int print_num = 0;
+    private TextView mTextView1, mTextView2, mTextView3, mTextView4;
     private int print_size = 8;
     private int error_level = 3;
 
@@ -41,10 +41,9 @@ public class QrActivity extends BaseActivity {
 
         mImageView = findViewById(R.id.qr_image);
         mTextView1 = findViewById(R.id.qr_text_content);
-        mTextView2 = findViewById(R.id.qr_text_num);
-        mTextView3 = findViewById(R.id.qr_text_size);
-        mTextView4 = findViewById(R.id.qr_text_el);
-        mTextView5 = findViewById(R.id.qr_align_info);
+        mTextView2 = findViewById(R.id.qr_text_size);
+        mTextView3 = findViewById(R.id.qr_text_el);
+        mTextView4 = findViewById(R.id.qr_align_info);
 
         findViewById(R.id.qr_content).setOnClickListener(new View.OnClickListener() {
             EditTextDialog mDialog;
@@ -68,30 +67,6 @@ public class QrActivity extends BaseActivity {
             }
         });
 
-        findViewById(R.id.qr_num).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String[] mStrings = new String[]{getResources().getString(R.string.single), getResources().getString(R.string.twice)};
-                final ListDialog listDialog = DialogCreater.createListDialog(QrActivity.this,  getResources().getString(R.string.array_qrcode),getResources().getString(R.string.cancel), mStrings);
-                listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
-                    @Override
-                    public void OnItemClick(int position) {
-                        if (!BluetoothUtil.isBlueToothPrinter) {
-                            Toast.makeText(QrActivity.this, R.string.toast_7, Toast.LENGTH_LONG).show();
-                            position = 0;
-                        } else {
-                            mTextView3.setText("7");
-                            print_size = 7;
-                        }
-                        mTextView2.setText(mStrings[position]);
-                        print_num = position;
-                        listDialog.cancel();
-                    }
-                });
-                listDialog.show();
-            }
-        });
-
         findViewById(R.id.qr_size).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,11 +75,7 @@ public class QrActivity extends BaseActivity {
                     @Override
                     public void OnItemClick(int position) {
                         position += 1;
-                        if (print_num == 1 && Integer.parseInt(mTextView3.getText().toString()) > 7) {
-                            Toast.makeText(QrActivity.this, R.string.toast_8, Toast.LENGTH_LONG).show();
-                            position = 7;
-                        }
-                        mTextView3.setText("" + position);
+                        mTextView2.setText("" + position);
                         print_size = position;
                         listDialog.cancel();
                     }
@@ -121,7 +92,7 @@ public class QrActivity extends BaseActivity {
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {
-                        mTextView4.setText(el[position]);
+                        mTextView3.setText(el[position]);
                         error_level = position;
                         listDialog.cancel();
                     }
@@ -138,7 +109,7 @@ public class QrActivity extends BaseActivity {
                 listDialog.setItemClickListener(new ListDialog.ItemClickListener() {
                     @Override
                     public void OnItemClick(int position) {
-                        mTextView5.setText(pos[position]);
+                        mTextView4.setText(pos[position]);
                         if(!BluetoothUtil.isBlueToothPrinter){
                             SunmiPrintHelper.getInstance().setAlign(position);
                         }else{
@@ -170,14 +141,8 @@ public class QrActivity extends BaseActivity {
             SunmiPrintHelper.getInstance().printQr(mTextView1.getText().toString(), print_size, error_level);
             SunmiPrintHelper.getInstance().feedPaper();
         } else {
-            if (print_num == 0) {
-                BluetoothUtil.sendData(ESCUtil.getPrintQRCode(mTextView1.getText().toString(), print_size, error_level));
-                BluetoothUtil.sendData(ESCUtil.nextLine(3));
-            } else {
-                BluetoothUtil.sendData(ESCUtil.getPrintDoubleQRCode(mTextView1.getText().toString(), mTextView1.getText().toString(), print_size, error_level));
-                BluetoothUtil.sendData(ESCUtil.nextLine(3));
-            }
-
+            BluetoothUtil.sendData(ESCUtil.getPrintQRCode(mTextView1.getText().toString(), print_size, error_level));
+            BluetoothUtil.sendData(ESCUtil.nextLine(3));
         }
     }
 }

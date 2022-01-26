@@ -35,32 +35,6 @@
             android:textSize="14sp"/>
     </LinearLayout>
 
-
-    <LinearLayout
-        android:id="@+id/qr_num"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/array_qrcode"
-            android:textColor="@color/white"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/qr_text_num"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/arrow"
-            android:gravity="right|center_vertical"
-            android:text="@string/single"
-            android:textColor="@color/gray"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
     <LinearLayout
         android:id="@+id/qr_size"
         android:layout_width="match_parent"
