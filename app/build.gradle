@@ -1,12 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.sunmi.printerhelper"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 7
         versionName "2.5"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -29,6 +28,6 @@ dependencies {
     implementation 'com.sunmi:sunmiui:1.1.27'
     //zxing to generate barcode
     implementation files('libs/core-3.3.0.jar')
-    implementation 'com.sunmi:printerlibrary:1.0.14'
+    implementation 'com.sunmi:printerlibrary:1.0.16'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
