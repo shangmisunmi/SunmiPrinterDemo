@@ -9,7 +9,7 @@ We strongly recommend developers to use Android Studio to develop.The demo for A
 ## Library
     
     dependencies{
-      implementation 'com.sunmi:printerlibrary:1.0.13'
+      implementation 'com.sunmi:printerlibrary:1.0.18'
     }
     
 Now we replaced AIDL integration with Sunmi Printer Interface Library.  
