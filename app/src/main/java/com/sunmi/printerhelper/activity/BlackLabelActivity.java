@@ -13,7 +13,10 @@ import com.sunmi.printerhelper.utils.ESCUtil;
 import com.sunmi.printerhelper.utils.SunmiPrintHelper;
 
 /**
- *  Only Desktop printer（T1、T2） supports black mark function, this is how to call black mark api
+ *  T1、T2、K、V2s_Plus supports black mark function, this is how to call black mark api
+ *  The black mark printing method and the label printing method are designed the same：
+ *  labellocate -> print content -> labelout
+ *  Note that you must use：{@link ESCUtil#labellocate()} and {@link ESCUtil#labelout()}
  *  @author kaltin
  */
 public class BlackLabelActivity extends BaseActivity{
@@ -40,9 +43,9 @@ public class BlackLabelActivity extends BaseActivity{
             public void onClick(View v) {
                 if(SunmiPrintHelper.getInstance().isBlackLabelMode()){
                     if(!BluetoothUtil.isBlueToothPrinter){
-                        SunmiPrintHelper.getInstance().sendRawData(ESCUtil.gogogo());
+                        SunmiPrintHelper.getInstance().sendRawData(ESCUtil.labellocate());
                     }else{
-                        BluetoothUtil.sendData(ESCUtil.gogogo());
+                        BluetoothUtil.sendData(ESCUtil.labellocate());
                     }
                 }else{
                     Toast.makeText(BlackLabelActivity.this, R.string.toast_10, Toast.LENGTH_LONG).show();
@@ -57,15 +60,17 @@ public class BlackLabelActivity extends BaseActivity{
                     Toast.makeText(BlackLabelActivity.this, R.string.toast_10, Toast.LENGTH_LONG).show();
                 }else{
                     if(!BluetoothUtil.isBlueToothPrinter){
+                        SunmiPrintHelper.getInstance().sendRawData(ESCUtil.labellocate());
                         SunmiPrintHelper.getInstance().printQr("www.sunmi.com", 6, 3);
                         SunmiPrintHelper.getInstance().print3Line();
-                        SunmiPrintHelper.getInstance().sendRawData(ESCUtil.gogogo());
+                        SunmiPrintHelper.getInstance().sendRawData(ESCUtil.labelout());
                         SunmiPrintHelper.getInstance().cutpaper();
                     }else{
+                        SunmiPrintHelper.getInstance().sendRawData(ESCUtil.labellocate());
                         byte[] rv = ESCUtil.getPrintQRCode("www.sunmi.com", 6, 3);
                         rv = BytesUtil.byteMerger(rv, new byte[]{0xa, 0xa,0xa});
                         BluetoothUtil.sendData(rv);
-                        BluetoothUtil.sendData(ESCUtil.gogogo());
+                        BluetoothUtil.sendData(ESCUtil.labelout());
                         BluetoothUtil.sendData(ESCUtil.cutter());
                     }
                 }

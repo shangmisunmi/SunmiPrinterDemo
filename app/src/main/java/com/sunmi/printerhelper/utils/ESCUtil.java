@@ -327,11 +327,24 @@ public class ESCUtil {
 		return data;
 	}
 
-	//走纸到黑标
-	public static byte[] gogogo(){
-		byte[] data = new byte[]{0x1C, 0x28, 0x4C, 0x02, 0x00, 0x42, 0x31};
-		return data;
+	/**
+	 * 	标签or黑标模式定位
+	 * 	由于兼容性原因只有手持机可以支持SDK,其他设备必须使用指令方法
+	 * 	For compatibility reasons, only the handheld can support the SDK, other devices must use the command method
+	 */
+	public static byte[] labellocate() {
+		return new byte[]{0x1C, 0x28, 0x4C, 0x02, 0x00, 0x43, 0x31};
 	}
+
+	/**
+	 * 标签or黑标模式送出
+	 * 由于兼容性原因只有手持机可以支持SDK,其他设备必须使用指令方法
+	 * For compatibility reasons, only the handheld can support the SDK, other devices must use the command method
+	 */
+	public static byte[] labelout(){
+		return new byte[]{0x1C, 0x28, 0x4C, 0x02, 0x00, 0x42, 0x31};
+	}
+
 
 
 	////////////////////////////////////////////////////////////////////////////////////
