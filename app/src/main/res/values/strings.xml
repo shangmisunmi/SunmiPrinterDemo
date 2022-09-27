@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">PrinterHelper</string>
+
+    <!--funtion list-->
+    <string name="function_all">Comprehensive Test</string>
+    <string name="function_qrcode">QR Code</string>
+    <string name="function_barcode">Bar Code</string>
+    <string name="function_text">Text</string>
+    <string name="function_tab">Form</string>
+    <string name="function_pic">Picture</string>
+    <string name="function_multi">Multi Threading</string>
+    <string name="function_threeline">Paper Feed</string>
+    <string name="function_buffer">Transaction Print</string>
+    <string name="function_blackline">Black Label</string>
+    <string name="function_cash">Cash Test</string>
+    <string name="function_lcd">Lcd Test</string>
+    <string name="function_status">Status</string>
+    <string name="function_label">Label Test</string>
+
+    <!--titles-->
+    <string name="setting_title">Setting</string>
+    <string name="info_title">PrinterInformation</string>
+    <string name="qr_title">Qr Test</string>
+    <string name="barcode_title">BarCode Test</string>
+    <string name="text_title">Text Test</string>
+    <string name="bitmap_title">Picture Test</string>
+    <string name="tab_title">Form Test</string>
+    <string name="all_title">Comprehensive Test</string>
+    <string name="buffer_title">Transaction Test</string>
+    <string name="blackline_title">Black Label Test</string>
+    <string name="lcd_title">Lcd Test</string>
+    <string name="label_title">Label Test</string>
+
+    <!--text-->
+    <string name="printer_serial_num">serial number</string>
+    <string name="printer_model">printer model</string>
+    <string name="printer_head">printer head</string>
+    <string name="printer_firmware">printer firmware version</string>
+    <string name="printer_head_size">priner head size</string>
+    <string name="printer_distance">printed distance</string>
+    <string name="printer_version">service version</string>
+    <string name="printer_dev_version">development version</string>
+    <string name="enter_work">Enter Transaction</string>
+    <string name="exit_work">Exit Transaction</string>
+    <string name="start_work">Start Transaction</string>
+    <string name="start_work_low">Start Printing</string>
+    <string name="over_work">End Transaction</string>
+    <string name="error_work">Exception Occurred</string>
+    <string name="print_baidu_ticket">Print Baidu ticket</string>
+    <string name="print_meituan_ticket">Print Meituan ticket</string>
+    <string name="print_eleme_ticket">Print Eleme ticket</string>
+    <string name="print_koubei_ticket">Print Koubei ticket</string>
+    <string name="print_interval_black">Print Interval Black</string>
+    <string name="print_black">Print Black</string>
+    <string name="print">Print</string>
+    <string name="printing">Printing~~~</string>
+    <string name="input_barcode">Please input barcode content</string>
+    <string name="content_barcode">barcode</string>
+    <string name="encode_barcode">barcode encode</string>
+    <string name="no_print">text null</string>
+    <string name="barcode_up">upon barcode</string>
+    <string name="barcode_down">beneath barcode</string>
+    <string name="barcode_updown">up and beneath</string>
+    <string name="text_position">HRI position</string>
+    <string name="barcode_height">height</string>
+    <string name="barcode_width">width</string>
+    <string name="content_qrcode">qrcode</string>
+    <string name="input_qrcode">Please input QrCode content</string>
+    <string name="size_qrcode">QR-Code size</string>
+    <string name="error_qrcode">error correctionlevel </string>
+    <string name="upload_info">Upload Printer Info</string>
+    <string name="characterset">char set</string>
+    <string name="connect_method">connect method</string>
+    <string name="size_paper">paper size</string>
+    <string name="size_text">text size</string>
+    <string name="type_text">text typeface</string>
+    <string name="bold_text">bold</string>
+    <string name="underline_text">underline</string>
+    <string name="print_density">printer density</string>
+    <string name="add_line">add</string>
+    <string name="content_form">content</string>
+    <string name="weight_form">weight%</string>
+    <string name="align_form">align</string>
+    <string name="align_left">left</string>
+    <string name="align_mid">middle</string>
+    <string name="align_right">right</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="about">about</string>
+    <string name="single">single</string>
+    <string name="twice">double</string>
+    <string name="connect_service">Connect</string>
+    <string name="disconnect_service">Disconnect</string>
+    <string name="input_order">input epson command:</string>
+    <string name="multithread">multithread</string>
+    <string name="multithread_stop">stop</string>
+    <string name="pic_pos">picture arrangement mode</string>
+    <string name="pic_hor">transverse</string>
+    <string name="pic_ver">portrait</string>
+    <string name="pic_mode">picture printing method</string>
+    <string name="pic_mode1">raster bitmap</string>
+    <string name="pic_mode2">8 point single density</string>
+    <string name="pic_mode3">8 point double density</string>
+    <string name="pic_mode4">24 point single density</string>
+    <string name="pic_mode5">24 point double density</string>
+    <string name="style_width">times width</string>
+    <string name="style_height">times height</string>
+    <string name="buffer_info1">Event Print: Controls the print of each order for print status\nIn the process of printing a single transaction, if there is an out-of-paper abnormalities, after the paper state is restored, you can choose to reprint a single.</string>
+    <string name="buffer_info2">Step1:start event print model\nStep2:add an event\nStep3:quit event print model</string>
+    <string name="bl_info1">Color requirements: reflectivity does not exceed 6%, infrared wavelength 700-1000nm range.</string>
+    <string name="bl_info2">Position requirements:Black label needs to be in the middle of the paper level sensor can be detected.</string>
+    <string name="bl_info3">Detection of black label: The printer will feed the paper (up to 600mm)to detect the black label</string>
+    <string name="bl_set">Black label setting</string>
+    <string name="bl_check">Black label checking</string>
+    <string name="bl_sample">Black label sample</string>
+    <string name="display_text">display a line</string>
+    <string name="display_texts">display lines</string>
+    <string name="display_pic">display picture</string>
+    <string name="label_print_one">print one label</string>
+    <string name="label_print_more">print multi label</string>
+    <string name="label_info">Sunmi label printing function now only supports handheld V2 and v2pro
+        devices. Please consult the supplier before use！</string>
+    <string name="label_info2">Usage: different from the standard label instruction, Sunmi label
+        printing needs to adapt the printing content and locate the label printing position through the positioning interface</string>
+    <string name="sunmi_font">Sunmi monospace</string>
+    <string name="custom_font">Custom typeface</string>
+
+    <!--instruction-->
+    <string name="toast_1">Transaction print,use the AIDL mode!</string>
+    <string name="toast_2">The service has been disconnected!</string>
+    <string name="toast_3">Bluetooth device is unavailable</string>
+    <string name="toast_4">Bluetooth device not detected. Please open Bluetooth!</string>
+    <string name="toast_5">Not Found InnterPrinter!</string>
+    <string name="toast_6">Bluetooth connect failed!</string>
+    <string name="toast_7"> Only a single Qr code is printed for the AIDL mode</string>
+    <string name="toast_8">Now QrCode size must be less than 7!</string>
+    <string name="toast_9">BarCode type or conent error!</string>
+    <string name="toast_10">Please set the printer as black label mode!</string>
+    <string name="toast_11">Settings->System->Advanced->InnerPrinter-> set black mark
+        function</string>
+    <string name="toast_12">Please set the printer to label mode!</string>
+
+    <!--about content-->
+    <string name="about_content">PrinterHelper is suitable for the sunmi series. \nPrinterHelper integrate two connection type: AIDL and BLUETOOTH. It also provide a series of printing testing module, which help the developer to connect with the sunmi printing function faster. \n upload the information that need to be printed, which allows sunmi to better locate the issues. \n official site: http://www.sunmi.com. \n developer documentation: http://docs.sunmi.com</string>
+
+
+    <!--function explain-->
+    <string name="text_instruction"> specification: The typeface of sunmi is monospaced font. Expect for supporting the font structure set by normal instruction set, it can also use AIDL interface interchange to directly set the font size. However, the testing demo only could use AIDL interface interchange to do it. Developers could look up relative Epson instruction set, then set the font by themselves. \n notice: the setting of the character set only has influence on the order printing, not affecting AIDL printing characters. Printing Single-Byte Character set should set the Single-Byte mode at first. Howerver, the default of sunmi services is double byte mode.  </string>
+    <!--print content-->
+    <string name="text_print">欢迎光临(Simplified Chinese)\n歡迎光臨（traditional chinese）\nWelcome(English)\n어서 오세요.(Korean)\nいらっしゃいませ(Japanese)\nWillkommen in der(Germany)\nSouhaits de bienvenue(France)\nยินดีต้อนรับสู่(Thai)\nДобро пожаловать(Russian)\nBenvenuti a(Italian)\nvítejte v(Czech)\nBEM - vindo Ao(Portutuese)\nمرحبا بكم في(Arabic)\n</string>
+    <!--table explain-->
+    <string name="table_instruction">specifications: Bluetooth printing table could only provide examples and printing test. Specific methods could refer to Epson instruction set.  </string>
+</resources>

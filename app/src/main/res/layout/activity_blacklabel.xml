@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp"
+              android:orientation="vertical"
+              android:divider="@drawable/account_line"
+              android:dividerPadding="1dp"
+              android:showDividers="middle|end|beginning">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/bl_info1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/bl_info2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/bl_info3"/>
+
+    <Button
+        android:id="@+id/bl_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/bl_set"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/bl_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/bl_check"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/bl_sample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/bl_sample"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+</LinearLayout>

@@ -1,0 +1,61 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sunmi.printerhelper">
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
+    <!-- To support printerlibrary on Android R -->
+    <queries>
+        <package android:name="woyou.aidlservice.jiuiv5"/>
+    </queries>
+
+    <application
+        android:name="BaseApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.FunctionActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SettingActivity"
+            android:parentActivityName=".activity.FunctionActivity"/>
+        <activity
+            android:name=".activity.PrinterInfoActivity"
+            android:parentActivityName=".activity.SettingActivity"/>
+        <activity
+            android:name=".activity.QrActivity"
+            android:parentActivityName=".activity.FunctionActivity"/>
+        <activity
+            android:name=".activity.BarCodeActivity"
+            android:parentActivityName=".activity.FunctionActivity"/>
+        <activity
+            android:name=".activity.TextActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:parentActivityName=".activity.FunctionActivity"/>
+        <activity android:name=".activity.BitmapActivity"
+            android:parentActivityName=".activity.FunctionActivity"/>
+        <activity android:name=".activity.TableActivity"
+            android:windowSoftInputMode="adjustNothing"
+            android:parentActivityName=".activity.FunctionActivity"/>
+        <activity android:name=".activity.AllActivity"
+            android:parentActivityName=".activity.FunctionActivity"/>
+        <activity android:name=".activity.BufferActivity"
+            android:parentActivityName=".activity.FunctionActivity"/>
+        <activity android:name=".activity.BlackLabelActivity"
+            android:parentActivityName=".activity.FunctionActivity"/>
+        <activity android:name=".activity.LcdActivity"
+            android:parentActivityName=".activity.FunctionActivity"/>
+        <activity android:name=".activity.LabelActivity"
+            android:parentActivityName=".activity.FunctionActivity"/>
+    </application>
+
+</manifest>

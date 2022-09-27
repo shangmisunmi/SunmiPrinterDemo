@@ -1,0 +1,157 @@
+<resources>
+    <string name="app_name">打印助手</string>
+
+    <!--funtion list-->
+    <string name="function_all">综合测试</string>
+    <string name="function_qrcode">二维码</string>
+    <string name="function_barcode">条形码</string>
+    <string name="function_text">文字</string>
+    <string name="function_tab">表格</string>
+    <string name="function_pic">图片</string>
+    <string name="function_multi">多线程</string>
+    <string name="function_threeline">空打三行</string>
+    <string name="function_buffer">事务打印</string>
+    <string name="function_blackline">黑标打印</string>
+    <string name="function_cash">钱箱测试</string>
+    <string name="function_lcd">客显测试</string>
+    <string name="function_status">打印机状态</string>
+    <string name="function_label">标签打印</string>
+
+
+    <!--titles-->
+    <string name="setting_title">设置</string>
+    <string name="info_title">打印机信息</string>
+    <string name="qr_title">二维码打印测试</string>
+    <string name="barcode_title">条形码打印测试</string>
+    <string name="text_title">文字打印测试</string>
+    <string name="bitmap_title">图片打印测试</string>
+    <string name="tab_title">表格打印测试</string>
+    <string name="all_title">综合测试</string>
+    <string name="buffer_title">事务打印测试</string>
+    <string name="blackline_title">黑标打印测试</string>
+    <string name="lcd_title">客显测试</string>
+    <string name="label_title">标签打印测试</string>
+
+    <!--text-->
+    <string name="printer_serial_num">打印机序列号</string>
+    <string name="printer_model">打印机型号</string>
+    <string name="printer_head">打印头型号</string>
+    <string name="printer_firmware">打印机固件版本号</string>
+    <string name="printer_head_size">打印机头尺寸</string>
+    <string name="printer_distance">打印距离</string>
+    <string name="printer_version">打印服务版本</string>
+    <string name="printer_dev_version">打印服务开发版本</string>
+    <string name="enter_work">进入事务打印</string>
+    <string name="exit_work">退出事务打印</string>
+    <string name="start_work">开始事务打印</string>
+    <string name="start_work_low">开始普通打印</string>
+    <string name="over_work">事务打印结束</string>
+    <string name="error_work">发生异常 打印中断</string>
+    <string name="print_baidu_ticket">打印百度小票</string>
+    <string name="print_meituan_ticket">打印美团小票</string>
+    <string name="print_eleme_ticket">打印饿了么小票</string>
+    <string name="print_koubei_ticket">打印口碑小票</string>
+    <string name="print_interval_black">打印间断黑块</string>
+    <string name="print_black">打印大黑块</string>
+    <string name="print">打印</string>
+    <string name="printing">打印中~~~</string>
+    <string name="input_barcode">请输入条形码内容</string>
+    <string name="content_barcode">条形码内容</string>
+    <string name="encode_barcode">条形码编码</string>
+    <string name="no_print">不打印文字</string>
+    <string name="barcode_up">条形码上方</string>
+    <string name="barcode_down">条形码下方</string>
+    <string name="barcode_updown">条形码上下方</string>
+    <string name="text_position">文字位置</string>
+    <string name="barcode_height">条形码高度</string>
+    <string name="barcode_width">条形码宽度</string>
+    <string name="content_qrcode">二维码内容</string>
+    <string name="input_qrcode">请输入二维码内容</string>
+    <string name="size_qrcode">二维码块大小</string>
+    <string name="error_qrcode">二维码纠错等级</string>
+    <string name="upload_info">上传打印信息</string>
+    <string name="characterset">字符集</string>
+    <string name="size_text">字体大小</string>
+    <string name="type_text">文字字体</string>
+    <string name="bold_text">加粗</string>
+    <string name="underline_text">下划线</string>
+    <string name="connect_method">连接方式</string>
+    <string name="size_paper">纸张尺寸</string>
+    <string name="print_density">打印浓度</string>
+    <string name="add_line">新增一行</string>
+    <string name="content_form">表格内容</string>
+    <string name="weight_form">内容权重</string>
+    <string name="align_form">对齐方式</string>
+    <string name="align_left">居左</string>
+    <string name="align_mid">居中</string>
+    <string name="align_right">居右</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="about">关于</string>
+    <string name="single">单个</string>
+    <string name="twice">双个</string>
+    <string name="connect_service">连接服务</string>
+    <string name="disconnect_service">断开服务</string>
+    <string name="input_order">请输入指令:</string>
+    <string name="multithread">多线程并发打印</string>
+    <string name="multithread_stop">点击停止</string>
+    <string name="pic_pos">图片排列方式</string>
+    <string name="pic_hor">横向</string>
+    <string name="pic_ver">纵向</string>
+    <string name="pic_mode">图片打印方式</string>
+    <string name="pic_mode1">光栅位图</string>
+    <string name="pic_mode2">8点单密度</string>
+    <string name="pic_mode3">8点双密度</string>
+    <string name="pic_mode4">24点单密度</string>
+    <string name="pic_mode5">24点双密度</string>
+    <string name="style_width">倍宽</string>
+    <string name="style_height">倍高</string>
+    <string name="buffer_info1">事务打印：控制每单的打印，可获取打印状态\n在事务打印一单过程中，如果出现缺纸异常，在恢复有纸状态后，可选择重新打印一单。</string>
+    <string name="buffer_info2">第一步：点击进入事务模式\n第二步：提交事务--打印百度小票\n第三步：退出事务模式</string>
+    <string name="bl_info1">黑标颜色要求：反射率不超过 6%，红外波长 700-1000nm 范围内。</string>
+    <string name="bl_info2">黑标位置要求：黑标需要在纸张水平中间位置才能被传感器器检测到。</string>
+    <string name="bl_info3">检测黑标：检测黑标的最长走纸距离为600mm.</string>
+    <string name="bl_set">黑标设置</string>
+    <string name="bl_check">黑标检测</string>
+    <string name="bl_sample">黑标小票样张</string>
+    <string name="display_text">显示一行文本</string>
+    <string name="display_texts">显示多行文本</string>
+    <string name="display_pic">显示图片</string>
+    <string name="label_print_one">打印一张标签</string>
+    <string name="label_print_more">打印多张标签</string>
+    <string name="label_info">商米标签打印功能现在只支持手持V2、V2pro设备，使用前请咨询供应商！</string>
+    <string name="label_info2">使用方法：首次放入标签纸，先切换标签模式，学习标签纸，然后测试打印（设置->内置打印->打印模式选择->选择标签热敏->标签学习）
+    </string>
+
+    <!--instruction-->
+    <string name="toast_1">事务打印请使用API模式!</string>
+    <string name="toast_2">服务已断开!</string>
+    <string name="toast_3">蓝牙设备不可用</string>
+    <string name="toast_4">未检测到蓝牙设备，请打开蓝牙</string>
+    <string name="toast_5">未发现InnterPrinter!</string>
+    <string name="toast_6">蓝牙连接失败!</string>
+    <string name="toast_7">API 暂时只打印单个二维码</string>
+    <string name="toast_8">两个二维码尺寸最大为7</string>
+    <string name="toast_9">条码类型或内容不正确!</string>
+    <string name="toast_10">请设置打印机为黑标模式!</string>
+    <string name="toast_11">设置->系统->高级->内置打印->设置黑标功能</string>
+    <string name="toast_12">请设置打印机为标签模式!</string>
+    <string name="sunmi_font">商米等宽字体</string>
+    <string name="custom_font">自定义字体</string>
+
+    <!--about content-->
+    <string
+        name="about_content">PrinterHelper适用于sunmi系列\nPrinterHelper集成了API和BLUETOOTH两种连接方式，并且提供一系列的打印测试模块，帮助开发者更快的接入sunmi打印功能。\n上传打印信息可以帮助sunmi更好的定位出现的问题。\n官网:http://www.sunmi.com\n开发者文档: http://docs.sunmi.com
+    </string>
+
+    <!--function explain-->
+    <string name="text_instruction">说明：Sunmi打印字体是等宽字体，除支持常用Epson指令集设置字体结构外，还可以使用API
+        接口调用直接设置字体大小尺寸，测试demo仅使用后者设置字体大小，开发者有意可自己查阅相关Epson指令设置字体变化。\n注意：字符集的设置只影响指令打印不会影响API打印文字，打印单字节字符集需要先设置单字节模式，Sunmi服务默认双字节模式！</string>
+
+    <!--print content-->
+    <string name="text_print">欢迎光临(简体中文)\n歡迎光臨(繁体中文)\nWelcome(英文)\n어서 오세요.(韩文)\nいらっしゃいませ(日文)\nWillkommen in der(德文)\nSouhaits de bienvenue(法文)\nยินดีต้อนรับสู่(泰文)\nДобро пожаловать(俄文)\nBenvenuti a(意大利语)\nvítejte v(捷克文)\nBEM - vindo Ao(葡萄牙文)\nمرحبا بكم في(阿拉伯语)\n</string>
+
+    <!--table explain-->
+    <string name="table_instruction">说明：蓝牙打印表格只提供例子及打印效果测试，具体方法可参考epson指令集。</string>
+
+</resources>
