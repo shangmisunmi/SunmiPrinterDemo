@@ -1,2 +1,22 @@
-include ':app'
-rootProject.name='SunmiPrinterDemo'
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    plugins {
+        id 'com.android.application' version '8.8.0' apply false
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url = 'https://maven.aliyun.com/repository/public/'
+        }
+    }
+}
+
+include 'app'
+rootProject.name = 'SunmiPrinterDemo'

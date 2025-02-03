@@ -1,34 +1,53 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion 30
+    compileSdk = 35
+    namespace = 'com.sunmi.printerhelper'
+
     defaultConfig {
-        applicationId "com.sunmi.printerhelper"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 7
-        versionName "2.5"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdk = 21
+        targetSdk = 30
+        versionCode = 7
+        versionName = "2.5"
+        proguardFiles += 'proguard-rules.pro'
+        multiDexEnabled = false
     }
+
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        configureEach {
+            signingConfig = signingConfigs.debug
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
+    buildFeatures {
+        buildConfig = true
+        compose = true
+    }
+
+    lintOptions {
+        disable 'ExpiredTargetSdkVersion', 'GradleDependency', 'DefaultLocale', 'NonConstantResourceId', 'SetTextI18n', 'InflateParams', 'MissingApplicationIcon', 'MissingPermission', 'UseCompatLoadingForDrawables'
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    //Used for Demo Ui interface display, has nothing to do with function
-    implementation 'com.sunmi:sunmiui:1.1.27'
-    //zxing to generate barcode
-    implementation files('libs/core-3.3.0.jar')
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    //Please refer to https://developer.sunmi.com/docs/zh-CN/xeghjk491/xadmeghjk546 for the latest version
-    implementation 'com.sunmi:printerlibrary:latest.release'
+    // AndroidX
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // Used for Demo UI interface display, has nothing to do with function
+    implementation 'com.sunmi:sunmiui:1.1.26'
+
+    // ZXing to generate barcode
+    implementation 'com.google.zxing:core:3.5.3'
+
+    // Please refer to https://developer.sunmi.com/docs/zh-CN/xeghjk491/xadmeghjk546 for the latest version
+    implementation 'com.sunmi:printerlibrary:1.0.23'
+
 }

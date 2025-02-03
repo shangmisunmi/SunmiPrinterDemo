@@ -239,7 +239,7 @@ public class FunctionActivity extends AppCompatActivity {
     private void showAbout() {
         CharSequence charSequenc = getResources().getText(R.string.about_content);
         TextHintDialog textHintDialog = DialogCreater.createTextHintDialog(this, getResources().getString(R.string.about), getResources().getString(R.string.upload_info), "GitHub", charSequenc.toString(), null,null, false);
-        TextView textView = textHintDialog.getDialog().findViewById(R.id.dialog_msg);
+        TextView textView = textHintDialog.getDialog().findViewById(sunmi.sunmiui.R.id.dialog_msg);
         textView.setGravity(Gravity.START);
         textHintDialog.setCanceledOnTouchOutside(true);
         textHintDialog.show();
