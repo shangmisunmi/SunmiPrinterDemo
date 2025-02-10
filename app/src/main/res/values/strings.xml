@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PrinterHelper</string>
 
@@ -20,7 +21,7 @@
     <!--titles-->
     <string name="setting_title">Setting</string>
     <string name="info_title">PrinterInformation</string>
-    <string name="qr_title">Qr Test</string>
+    <string name="qr_title">QR Test</string>
     <string name="barcode_title">BarCode Test</string>
     <string name="text_title">Text Test</string>
     <string name="bitmap_title">Picture Test</string>
@@ -107,7 +108,7 @@
     <string name="style_height">times height</string>
     <string name="buffer_info1">Event Print: Controls the print of each order for print status\nIn the process of printing a single transaction, if there is an out-of-paper abnormalities, after the paper state is restored, you can choose to reprint a single.</string>
     <string name="buffer_info2">Step1:start event print model\nStep2:add an event\nStep3:quit event print model</string>
-    <string name="bl_info1">Color requirements: reflectivity does not exceed 6%, infrared wavelength 700-1000nm range.</string>
+    <string name="bl_info1">Color requirements: reflectivity does not exceed 6%, infrared wavelength 700–1000nm range.</string>
     <string name="bl_info2">Position requirements:Black label needs to be in the middle of the paper level sensor can be detected.</string>
     <string name="bl_info3">Detection of black label: The printer will feed the paper (up to 600mm)to detect the black label</string>
     <string name="bl_set">Black label setting</string>
@@ -130,11 +131,11 @@
     <string name="toast_2">The service has been disconnected!</string>
     <string name="toast_3">Bluetooth device is unavailable</string>
     <string name="toast_4">Bluetooth device not detected. Please open Bluetooth!</string>
-    <string name="toast_5">Not Found InnterPrinter!</string>
+    <string name="toast_5">Not Found InnerPrinter!</string>
     <string name="toast_6">Bluetooth connect failed!</string>
     <string name="toast_7"> Only a single Qr code is printed for the AIDL mode</string>
     <string name="toast_8">Now QrCode size must be less than 7!</string>
-    <string name="toast_9">BarCode type or conent error!</string>
+    <string name="toast_9">BarCode type or content error!</string>
     <string name="toast_10">Please set the printer as black label mode!</string>
     <string name="toast_11">Settings->System->Advanced->InnerPrinter-> set black mark
         function</string>
@@ -143,11 +144,10 @@
     <!--about content-->
     <string name="about_content">PrinterHelper is suitable for the sunmi series. \nPrinterHelper integrate two connection type: AIDL and BLUETOOTH. It also provide a series of printing testing module, which help the developer to connect with the sunmi printing function faster. \n upload the information that need to be printed, which allows sunmi to better locate the issues. \n official site: http://www.sunmi.com. \n developer documentation: http://docs.sunmi.com</string>
 
-
     <!--function explain-->
     <string name="text_instruction"> specification: The typeface of sunmi is monospaced font. Expect for supporting the font structure set by normal instruction set, it can also use AIDL interface interchange to directly set the font size. However, the testing demo only could use AIDL interface interchange to do it. Developers could look up relative Epson instruction set, then set the font by themselves. \n notice: the setting of the character set only has influence on the order printing, not affecting AIDL printing characters. Printing Single-Byte Character set should set the Single-Byte mode at first. Howerver, the default of sunmi services is double byte mode.  </string>
     <!--print content-->
-    <string name="text_print">欢迎光临(Simplified Chinese)\n歡迎光臨（traditional chinese）\nWelcome(English)\n어서 오세요.(Korean)\nいらっしゃいませ(Japanese)\nWillkommen in der(Germany)\nSouhaits de bienvenue(France)\nยินดีต้อนรับสู่(Thai)\nДобро пожаловать(Russian)\nBenvenuti a(Italian)\nvítejte v(Czech)\nBEM - vindo Ao(Portutuese)\nمرحبا بكم في(Arabic)\n</string>
+    <string name="text_print">欢迎光临(Simplified Chinese)\n歡迎光臨（traditional chinese）\nWelcome(English)\n어서 오세요.(Korean)\nいらっしゃいませ(Japanese)\nWillkommen in der(Germany)\nSouhaits de bienvenue(France)\nยินดีต้อนรับสู่(Thai)\nДобро пожаловать(Russian)\nBenvenuti a(Italian)\nvítejte v(Czech)\nBEM - vindo Ao(Portuguese)\nمرحبا بكم في(Arabic)\n</string>
     <!--table explain-->
     <string name="table_instruction">specifications: Bluetooth printing table could only provide examples and printing test. Specific methods could refer to Epson instruction set.  </string>
 </resources>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">打印助手</string>
 
@@ -16,7 +17,6 @@
     <string name="function_lcd">客显测试</string>
     <string name="function_status">打印机状态</string>
     <string name="function_label">标签打印</string>
-
 
     <!--titles-->
     <string name="setting_title">设置</string>
@@ -107,8 +107,8 @@
     <string name="style_width">倍宽</string>
     <string name="style_height">倍高</string>
     <string name="buffer_info1">事务打印：控制每单的打印，可获取打印状态\n在事务打印一单过程中，如果出现缺纸异常，在恢复有纸状态后，可选择重新打印一单。</string>
-    <string name="buffer_info2">第一步：点击进入事务模式\n第二步：提交事务--打印百度小票\n第三步：退出事务模式</string>
-    <string name="bl_info1">黑标颜色要求：反射率不超过 6%，红外波长 700-1000nm 范围内。</string>
+    <string name="buffer_info2">第一步：点击进入事务模式\n第二步：提交事务—打印百度小票\n第三步：退出事务模式</string>
+    <string name="bl_info1">黑标颜色要求：反射率不超过 6%，红外波长 700–1000nm 范围内。</string>
     <string name="bl_info2">黑标位置要求：黑标需要在纸张水平中间位置才能被传感器器检测到。</string>
     <string name="bl_info3">检测黑标：检测黑标的最长走纸距离为600mm.</string>
     <string name="bl_set">黑标设置</string>
